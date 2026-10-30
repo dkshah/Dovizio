@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>About Us — Dovizio Pharmaceutical Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,39 +15,79 @@
   <!-- Global Header Navigation -->
   <nav class="site-nav">
     <div class="site-logo">
-      <a href="home.html" style="display:flex; align-items:center; gap:10px;">
-        <img src="assets/logo.png" alt="Dovizio">
+      <a href="home.html" class="site-logo-link">
+        <img src="assets/logo.png" alt="Dovizio Logo" class="logo-img">
         <div class="logo-text-wrap">
           <span class="logo-brand-name">Dovizio</span>
           <span class="logo-sub-name">Pharmaceutical Solutions</span>
         </div>
       </a>
     </div>
+
+    <!-- Desktop Navigation Links -->
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html" class="active">About Us</a></li>
       <li><a href="global-presence.html">Global Presence</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <a href="contact.html" class="nav-cta">Reach Us</a>
+
+    <!-- Action & Hamburger Toggle -->
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta nav-cta-desktop">Reach Us</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile & Tablet Slide-Down Menu Drawer -->
+  <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="home.html"><span class="icon">🏠</span> Home</a></li>
+        <li><a href="about.html" class="active"><span class="icon">🏢</span> About Us</a></li>
+        <li><a href="global-presence.html"><span class="icon">🌐</span> Global Presence</a></li>
+        <li><a href="contact.html"><span class="icon">✉️</span> Contact Us</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="contact.html" class="btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:14px;">
+          Reach Us ➔
+        </a>
+      </div>
+      <div class="mobile-drawer-info">
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Corporate HQ:</span>
+          <span class="mobile-info-val">Raleigh, NC, USA</span>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Inquiries:</span>
+          <a href="mailto:bd@doviziollc.com" class="mobile-info-val text-teal">bd@doviziollc.com</a>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Call / WhatsApp:</span>
+          <a href="tel:+919979895682" class="mobile-info-val">+91-9979895682</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- About Hero Banner (Slide 5) -->
-  <section class="hero-section" style="padding: 80px 40px 70px;">
+  <section class="hero-section">
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
       <div class="hero-tag">Enterprise Profile</div>
-      <h1 class="hero-title" style="font-size: 42px; max-width: 840px;">
+      <h1 class="hero-title">
         US-Based Leadership with Seamless Global Reach
       </h1>
-      <p class="hero-subtitle" style="font-size: 16px; max-width: 700px; margin-bottom: 30px;">
+      <p class="hero-subtitle">
         Deep expertise spanning early development to commercialization across diverse regulatory bodies for a large variety of APIs and finished dosage forms.
       </p>
-      <div style="background:rgba(255,255,255,0.08); border-radius:12px; padding:16px 24px; display:inline-flex; align-items:center; gap:20px; border:1px solid rgba(255,255,255,0.15);">
-        <span style="font-size:36px; font-weight:900; color:#2dd4bf;">100+</span>
+      <div style="background:rgba(255,255,255,0.08); border-radius:12px; padding: clamp(14px, 3vw, 18px) clamp(16px, 3vw, 24px); display:inline-flex; align-items:center; gap: clamp(12px, 3vw, 20px); border:1px solid rgba(255,255,255,0.15); flex-wrap: wrap;">
+        <span style="font-size: clamp(28px, 5vw, 36px); font-weight:900; color:#2dd4bf;">100+</span>
         <div style="font-size:13.5px; color:#e2e8f0; line-height:1.5;">
           <strong>Years of Combined Industry Experience</strong><br>
           Delivered directly to your API, formulation, and commercialization projects.
@@ -57,24 +97,24 @@
   </section>
 
   <!-- Guiding Purpose: Mission & Vision (Slide 3) -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;">
     <div class="section-header">
       <div class="section-subtitle">Guiding Purpose</div>
-      <h2 class="section-title" style="font-size: 32px;">Our Mission & Vision</h2>
+      <h2 class="section-title">Our Mission & Vision</h2>
       <p class="section-desc">Committed to advancing affordable global health access without compromising scientific rigor.</p>
     </div>
-    <div class="mv-grid" style="gap: 24px;">
-      <div class="mv-card mission" style="padding: 36px 32px;">
-        <span class="mv-tag" style="font-size: 12px;">Our Mission</span>
-        <div class="mv-headline" style="font-size: 22px;">Affordable Access | Global Outreach | Quality Medicines</div>
-        <p class="mv-text" style="font-size: 14.5px;">
+    <div class="mv-grid">
+      <div class="mv-card mission">
+        <span class="mv-tag">Our Mission</span>
+        <div class="mv-headline">Affordable Access | Global Outreach | Quality Medicines</div>
+        <p class="mv-text">
           Leading provider of affordable high-quality medicine worldwide. We bridge supply deficits by coordinating global sourcing, technical scale-up, and compliant market entry so that patients everywhere receive trusted treatments.
         </p>
       </div>
-      <div class="mv-card vision" style="padding: 36px 32px;">
-        <span class="mv-tag" style="font-size: 12px;">Our Vision</span>
-        <div class="mv-headline" style="font-size: 22px;">Trusted Global Pharmaceutical Partner</div>
-        <p class="mv-text" style="font-size: 14.5px;">
+      <div class="mv-card vision">
+        <span class="mv-tag">Our Vision</span>
+        <div class="mv-headline">Trusted Global Pharmaceutical Partner</div>
+        <p class="mv-text">
           Expanding universal access via scientific excellence, innovation, and an uncompromised quality mindset. We aim to be the premier bridge between world-class manufacturing capabilities and regulated pharmaceutical markets.
         </p>
       </div>
@@ -82,62 +122,62 @@
   </section>
 
   <!-- Foundational Principles: Core Values (Slide 4) -->
-  <section class="section-wrap alt-bg" style="padding: 70px 24px;">
+  <section class="section-wrap alt-bg">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div class="section-header">
         <div class="section-subtitle">Foundational Principles</div>
-        <h2 class="section-title" style="font-size: 32px;">Core Values</h2>
+        <h2 class="section-title">Core Values</h2>
         <p class="section-desc">The core convictions behind every decision, batch release, and partnership.</p>
       </div>
-      <div class="values-grid" style="gap: 20px;">
-        <div class="value-card" style="padding: 28px 24px;">
-          <span class="value-icon" style="font-size: 32px;">❤️</span>
-          <div class="value-name" style="font-size: 18px;">Health Equity</div>
-          <p class="value-desc" style="font-size: 13.5px;">Advance global access to quality medicines, eliminating supply chain inequities across both developed and emerging nations.</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-icon">❤️</span>
+          <div class="value-name">Health Equity</div>
+          <p class="value-desc">Advance global access to quality medicines, eliminating supply chain inequities across both developed and emerging nations.</p>
         </div>
-        <div class="value-card" style="padding: 28px 24px;">
-          <span class="value-icon" style="font-size: 32px;">⚡</span>
-          <div class="value-name" style="font-size: 18px;">Agile Action</div>
-          <p class="value-desc" style="font-size: 13.5px;">Responsive cross-functional partnership capable of swiftly navigating regulatory pivots, raw material sourcing, and scale-up challenges.</p>
+        <div class="value-card">
+          <span class="value-icon">⚡</span>
+          <div class="value-name">Agile Action</div>
+          <p class="value-desc">Responsive cross-functional partnership capable of swiftly navigating regulatory pivots, raw material sourcing, and scale-up challenges.</p>
         </div>
-        <div class="value-card" style="padding: 28px 24px;">
-          <span class="value-icon" style="font-size: 32px;">🧠</span>
-          <div class="value-name" style="font-size: 18px;">Rigorous Thinking</div>
-          <p class="value-desc" style="font-size: 13.5px;">Practical scientific problem-solving methodology grounded in robust analytical chemistry, process engineering, and ICH validation guidelines.</p>
+        <div class="value-card">
+          <span class="value-icon">🧠</span>
+          <div class="value-name">Rigorous Thinking</div>
+          <p class="value-desc">Practical scientific problem-solving methodology grounded in robust analytical chemistry, process engineering, and ICH validation guidelines.</p>
         </div>
-        <div class="value-card" style="padding: 28px 24px;">
-          <span class="value-icon" style="font-size: 32px;">🎯</span>
-          <div class="value-name" style="font-size: 18px;">Clear Execution</div>
-          <p class="value-desc" style="font-size: 13.5px;">Transparent plans, accountable ownership, and verified delivery pathways that ensure zero ambiguity from audit through commercialization.</p>
+        <div class="value-card">
+          <span class="value-icon">🎯</span>
+          <div class="value-name">Clear Execution</div>
+          <p class="value-desc">Transparent plans, accountable ownership, and verified delivery pathways that ensure zero ambiguity from audit through commercialization.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Technical Capabilities: Analytical Testing (Slide 13) -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;">
     <div class="section-header">
       <div class="section-subtitle">Technical Capabilities</div>
-      <h2 class="section-title" style="font-size: 32px;">Analytical Testing & Technical Services</h2>
+      <h2 class="section-title">Analytical Testing & Technical Services</h2>
       <p class="section-desc">Empowering pharmaceutical submissions with robust analytical validation and regulatory defense.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      <div style="background:#ffffff; border:1px solid #e2e8f0; border-top:4px solid var(--teal-primary); border-radius:12px; padding:28px 22px;">
-        <div style="font-size:24px; margin-bottom:12px;">📊</div>
+    <div class="tech-caps-grid">
+      <div class="tech-caps-card">
+        <div style="font-size:26px; margin-bottom:12px;">📊</div>
         <h3 style="font-size:17px; color:var(--navy-dark); margin-bottom:8px;">Analytical Method Development & Validation</h3>
         <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
           Complete stability testing under diverse climatic zones, stress testing, degradation kinetics, and high-precision impurity profiling.
         </p>
       </div>
-      <div style="background:#ffffff; border:1px solid #e2e8f0; border-top:4px solid var(--navy-dark); border-radius:12px; padding:28px 22px;">
-        <div style="font-size:24px; margin-bottom:12px;">📑</div>
+      <div class="tech-caps-card" style="border-top-color: var(--navy-dark);">
+        <div style="font-size:26px; margin-bottom:12px;">📑</div>
         <h3 style="font-size:17px; color:var(--navy-dark); margin-bottom:8px;">MOH Query Resolution</h3>
         <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
           Rapid, science-backed technical responses to health authority queries (FDA, EMA, WHO, GCC), minimizing deficiency letter iterations.
         </p>
       </div>
-      <div style="background:#ffffff; border:1px solid #e2e8f0; border-top:4px solid var(--teal-light); border-radius:12px; padding:28px 22px;">
-        <div style="font-size:24px; margin-bottom:12px;">🧪</div>
+      <div class="tech-caps-card" style="border-top-color: var(--teal-light);">
+        <div style="font-size:26px; margin-bottom:12px;">🧪</div>
         <h3 style="font-size:17px; color:var(--navy-dark); margin-bottom:8px;">Bioequivalence (BE) Studies</h3>
         <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
           Clinical study design, protocol oversight, GCP compliant site management, bioanalytical method validation, and clinical statistical reporting.

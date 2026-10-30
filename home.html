@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Dovizio Pharmaceutical Solutions — Precision, Quality & Scalability</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,60 +15,100 @@
   <!-- Global Header Navigation -->
   <nav class="site-nav">
     <div class="site-logo">
-      <a href="home.html" style="display:flex; align-items:center; gap:10px;">
-        <img src="assets/logo.png" alt="Dovizio">
+      <a href="home.html" class="site-logo-link">
+        <img src="assets/logo.png" alt="Dovizio Logo" class="logo-img">
         <div class="logo-text-wrap">
           <span class="logo-brand-name">Dovizio</span>
           <span class="logo-sub-name">Pharmaceutical Solutions</span>
         </div>
       </a>
     </div>
+
+    <!-- Desktop Navigation Links -->
     <ul class="nav-links">
       <li><a href="home.html" class="active">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="global-presence.html">Global Presence</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <a href="contact.html" class="nav-cta">Partner With Us</a>
+
+    <!-- Action & Hamburger Toggle -->
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta nav-cta-desktop">Partner With Us</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile & Tablet Slide-Down Menu Drawer -->
+  <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="home.html" class="active"><span class="icon">🏠</span> Home</a></li>
+        <li><a href="about.html"><span class="icon">🏢</span> About Us</a></li>
+        <li><a href="global-presence.html"><span class="icon">🌐</span> Global Presence</a></li>
+        <li><a href="contact.html"><span class="icon">✉️</span> Contact Us</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="contact.html" class="btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:14px;">
+          Partner With Us ➔
+        </a>
+      </div>
+      <div class="mobile-drawer-info">
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Corporate HQ:</span>
+          <span class="mobile-info-val">Raleigh, NC, USA</span>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Inquiries:</span>
+          <a href="mailto:bd@doviziollc.com" class="mobile-info-val text-teal">bd@doviziollc.com</a>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Call / WhatsApp:</span>
+          <a href="tel:+919979895682" class="mobile-info-val">+91-9979895682</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Section -->
-  <section class="hero-section" style="padding: 90px 40px 80px;">
+  <section class="hero-section">
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
       <div class="hero-tag">Global Pharmaceutical Capabilities</div>
-      <h1 class="hero-title" style="font-size: 46px; max-width: 880px; margin-bottom: 20px;">
+      <h1 class="hero-title">
         Bridging Global Markets with Precision, Quality & Scalability
       </h1>
-      <p class="hero-subtitle" style="font-size: 17px; max-width: 720px; margin-bottom: 32px;">
+      <p class="hero-subtitle">
         US-based pharmaceutical enterprise delivering end-to-end API sourcing, formulation development, CDMO execution, and regulatory excellence across the United States and India.
       </p>
-      <div class="hero-pills" style="margin-bottom: 36px;">
+      <div class="hero-pills">
         <div class="hero-pill"><span class="dot"></span> USA & India Strategic Hubs</div>
         <div class="hero-pill"><span class="dot"></span> US FDA • EU-GMP • WHO-GMP</div>
         <div class="hero-pill"><span class="dot"></span> APIs, Finished Dosages & RLDs</div>
         <div class="hero-pill"><span class="dot"></span> 503A / 503B Compounding Support</div>
       </div>
       <div class="hero-buttons">
-        <a href="contact.html" class="btn-primary" style="font-size:15px; padding:12px 28px;">Initiate Enterprise Project ➔</a>
-        <a href="about.html" class="btn-outline-white" style="font-size:15px; padding:12px 26px;">Explore Capabilities</a>
+        <a href="contact.html" class="btn-primary">Initiate Enterprise Project ➔</a>
+        <a href="about.html" class="btn-outline-white">Explore Capabilities</a>
       </div>
     </div>
   </section>
 
   <!-- Strategic Pillars (Slide 2) -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;">
     <div class="section-header">
       <div class="section-subtitle">Who We Are</div>
-      <h2 class="section-title" style="font-size: 32px;">A Global Partner. A Connected Model.</h2>
-      <p class="section-desc" style="max-width: 680px; margin: 0 auto; font-size: 15px;">
+      <h2 class="section-title">A Global Partner. A Connected Model.</h2>
+      <p class="section-desc">
         US-based perspective with strategic capabilities in the United States and India. Dovizio integrates scientific, technical, regulatory, and commercial capabilities to help clients move pharmaceutical products from opportunity to market.
       </p>
     </div>
-    <div class="pillars-grid" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+    <div class="pillars-grid">
       <div class="pillar-card">
         <div class="pillar-icon-box">🔬</div>
         <div class="pillar-title">Scientific Depth</div>
@@ -93,45 +133,45 @@
   </section>
 
   <!-- Dosage Form Breadth & Manufacturing Flexibility (Slide 8) -->
-  <section class="section-wrap alt-bg" style="padding: 70px 24px;">
+  <section class="section-wrap alt-bg">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div class="section-header">
         <div class="section-subtitle">Global Drug Product Sourcing</div>
-        <h2 class="section-title" style="font-size: 32px;">Dosage Form Breadth & Manufacturing Flexibility</h2>
+        <h2 class="section-title">Dosage Form Breadth & Manufacturing Flexibility</h2>
         <p class="section-desc">Partner selection designed around product characteristics, target markets, quality expectations, and scale.</p>
       </div>
-      <div class="dosage-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div class="dosage-card">
+      <div class="dosage-grid">
+        <div class="dosage-card" id="dosage-osd" onclick="selectDosageForm('osd')">
           <div class="dosage-letter">T</div>
           <div class="dosage-name">Oral Solids</div>
           <div class="dosage-type">Tablets • Capsules</div>
           <div class="dosage-sub">Established and niche commercial formulations</div>
         </div>
-        <div class="dosage-card">
+        <div class="dosage-card" id="dosage-liq" onclick="selectDosageForm('liq')">
           <div class="dosage-letter accent">L</div>
           <div class="dosage-name">Oral Liquids</div>
           <div class="dosage-type">Solutions • Suspensions</div>
           <div class="dosage-sub">Patient-appropriate, pediatric & geriatric presentations</div>
         </div>
-        <div class="dosage-card">
+        <div class="dosage-card" id="dosage-par" onclick="selectDosageForm('par')">
           <div class="dosage-letter">I</div>
           <div class="dosage-name">Parenterals</div>
           <div class="dosage-type">Sterile Injectables</div>
           <div class="dosage-sub">Critical care, hospital & specialty therapeutic needs</div>
         </div>
-        <div class="dosage-card">
+        <div class="dosage-card" id="dosage-der" onclick="selectDosageForm('der')">
           <div class="dosage-letter">D</div>
           <div class="dosage-name">Dermaceuticals</div>
           <div class="dosage-type">Topical Formulations</div>
           <div class="dosage-sub">Skin health, dermatological and specialized categories</div>
         </div>
-        <div class="dosage-card">
+        <div class="dosage-card" id="dosage-api" onclick="selectDosageForm('api')">
           <div class="dosage-letter accent">A</div>
           <div class="dosage-name">API & Intermediates</div>
           <div class="dosage-type">Niche / Tailored Synthesis</div>
           <div class="dosage-sub">Supplier qualification, DMF support & technical coordination</div>
         </div>
-        <div class="dosage-card">
+        <div class="dosage-card" id="dosage-ref" onclick="selectDosageForm('ref')">
           <div class="dosage-letter">R</div>
           <div class="dosage-name">Reference Products</div>
           <div class="dosage-type">RLDs • Comparators</div>
@@ -142,63 +182,63 @@
   </section>
 
   <!-- 5-Stage Value Proposition Workflow (Slide 14) -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;">
     <div class="section-header">
       <div class="section-subtitle">Operating Architecture</div>
-      <h2 class="section-title" style="font-size: 32px;">Value Proposition & Delivery Workflow</h2>
+      <h2 class="section-title">Value Proposition & Delivery Workflow</h2>
       <p class="section-desc">A structured, risk-mitigated journey ensuring predictable market entry.</p>
     </div>
-    <div class="workflow-row" style="gap: 16px;">
-      <div class="workflow-step" style="padding: 24px 16px;">
-        <div class="workflow-num" style="font-size: 24px;">01</div>
-        <div class="workflow-label" style="font-size: 16px;">Requirement</div>
+    <div class="workflow-row">
+      <div class="workflow-step">
+        <div class="workflow-num">01</div>
+        <div class="workflow-label">Requirement</div>
         <p class="workflow-desc">Target molecule volume definition and market feasibility.</p>
       </div>
-      <div class="workflow-step" style="padding: 24px 16px;">
-        <div class="workflow-num" style="font-size: 24px;">02</div>
-        <div class="workflow-label" style="font-size: 16px;">Selection</div>
+      <div class="workflow-step">
+        <div class="workflow-num">02</div>
+        <div class="workflow-label">Selection</div>
         <p class="workflow-desc">Facility audit, CDMO qualification and site matching.</p>
       </div>
-      <div class="workflow-step" style="padding: 24px 16px;">
-        <div class="workflow-num" style="font-size: 24px;">03</div>
-        <div class="workflow-label" style="font-size: 16px;">Compliance</div>
+      <div class="workflow-step">
+        <div class="workflow-num">03</div>
+        <div class="workflow-label">Compliance</div>
         <p class="workflow-desc">Dossier filing, CMC query resolution and regulatory clearance.</p>
       </div>
-      <div class="workflow-step" style="padding: 24px 16px;">
-        <div class="workflow-num" style="font-size: 24px;">04</div>
-        <div class="workflow-label" style="font-size: 16px;">Procurement</div>
+      <div class="workflow-step">
+        <div class="workflow-num">04</div>
+        <div class="workflow-label">Procurement</div>
         <p class="workflow-desc">Cost-effective commercial synthesis and scaled batch release.</p>
       </div>
-      <div class="workflow-step" style="padding: 24px 16px;">
-        <div class="workflow-num" style="font-size: 24px;">05</div>
-        <div class="workflow-label" style="font-size: 16px;">Delivery</div>
+      <div class="workflow-step">
+        <div class="workflow-num">05</div>
+        <div class="workflow-label">Delivery</div>
         <p class="workflow-desc">On-time global cold-chain supply and pedigree documentation.</p>
       </div>
     </div>
   </section>
 
   <!-- Global Compliance Strip (Slide 12) -->
-  <section style="max-width: 1200px; margin: 0 auto 70px; padding: 0 24px;">
-    <div class="compliance-strip" style="padding: 36px 30px;">
+  <section style="max-width: 1200px; margin: 0 auto clamp(40px, 6vw, 70px); padding: 0 clamp(16px, 4vw, 24px);">
+    <div class="compliance-strip">
       <div>
-        <div class="compliance-badge-name" style="font-size: 24px;">FDA</div>
-        <div class="compliance-badge-title" style="font-size: 15px;">U.S. FDA Compliant</div>
-        <div class="compliance-badge-desc" style="font-size: 12px;">Audited and inspected partner sites</div>
+        <div class="compliance-badge-name">FDA</div>
+        <div class="compliance-badge-title">U.S. FDA Compliant</div>
+        <div class="compliance-badge-desc">Audited and inspected partner sites</div>
       </div>
       <div>
-        <div class="compliance-badge-name" style="font-size: 24px;">EU-GMP</div>
-        <div class="compliance-badge-title" style="font-size: 15px;">European GMP Certified</div>
-        <div class="compliance-badge-desc" style="font-size: 12px;">Full Annex 1 sterile compliance</div>
+        <div class="compliance-badge-name">EU-GMP</div>
+        <div class="compliance-badge-title">European GMP Certified</div>
+        <div class="compliance-badge-desc">Full Annex 1 sterile compliance</div>
       </div>
       <div>
-        <div class="compliance-badge-name" style="font-size: 24px;">WHO</div>
-        <div class="compliance-badge-title" style="font-size: 15px;">WHO-GMP & ROW</div>
-        <div class="compliance-badge-desc" style="font-size: 12px;">Extensive global market approvals</div>
+        <div class="compliance-badge-name">WHO</div>
+        <div class="compliance-badge-title">WHO-GMP & ROW</div>
+        <div class="compliance-badge-desc">Extensive global market approvals</div>
       </div>
       <div>
-        <div class="compliance-badge-name" style="font-size: 24px;">COMP</div>
-        <div class="compliance-badge-title" style="font-size: 15px;">Compendial Standards</div>
-        <div class="compliance-badge-desc" style="font-size: 12px;">Full USP, EP, IP & JP monographs</div>
+        <div class="compliance-badge-name">COMP</div>
+        <div class="compliance-badge-title">Compendial Standards</div>
+        <div class="compliance-badge-desc">Full USP, EP, IP & JP monographs</div>
       </div>
     </div>
   </section>

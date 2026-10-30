@@ -1,105 +1,76 @@
 /**
- * Dovizio Pharmaceutical Solutions — Studio & Interactive Controller
+ * Dovizio Pharmaceutical Solutions — Main Interactive Controller
+ * Mobile, Tablet, iPad & Desktop Support
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Canvas Zoom Controller ---
-  const showcaseGrid = document.getElementById('showcaseGrid');
-  const zoomSelect = document.getElementById('zoomSelect');
-  let currentZoom = 1;
 
-  window.setZoom = function(val) {
-    if (!showcaseGrid) return;
-    if (val === 'fit') {
-      const containerWidth = document.querySelector('.showcase-viewport')?.clientWidth || window.innerWidth;
-      const naturalWidth = 1750; // approximate natural width of 4 columns
-      const calculated = Math.min(1, Math.max(0.4, (containerWidth - 80) / naturalWidth));
-      currentZoom = calculated;
+  // --- Mobile & Tablet Navigation Menu Controller ---
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+
+  window.toggleMobileMenu = function() {
+    const isOpen = mobileMenuBtn?.classList.contains('open');
+    if (isOpen) {
+      closeMobileMenu();
     } else {
-      currentZoom = parseFloat(val);
-    }
-    showcaseGrid.style.transform = `scale(${currentZoom})`;
-    if (zoomSelect) zoomSelect.value = val;
-  };
-
-  // --- View Mode Switcher ---
-  const canvasModeBtn = document.getElementById('canvasModeBtn');
-  const singleModeBtn = document.getElementById('singleModeBtn');
-  const showcaseViewport = document.getElementById('showcaseViewport');
-  const singlePageContainer = document.getElementById('singlePageContainer');
-
-  window.switchViewMode = function(mode) {
-    if (mode === 'canvas') {
-      canvasModeBtn?.classList.add('active');
-      singleModeBtn?.classList.remove('active');
-      if (showcaseViewport) showcaseViewport.style.display = 'block';
-      if (singlePageContainer) singlePageContainer.style.display = 'none';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      singleModeBtn?.classList.add('active');
-      canvasModeBtn?.classList.remove('active');
-      if (showcaseViewport) showcaseViewport.style.display = 'none';
-      if (singlePageContainer) singlePageContainer.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      openMobileMenu();
     }
   };
 
-  // --- Quick Page Selector for Single Mode ---
-  window.loadSinglePage = function(pageId) {
-    switchViewMode('single');
-    const pages = document.querySelectorAll('.single-page-view');
-    pages.forEach(p => p.style.display = 'none');
-    
-    const target = document.getElementById(`single-${pageId}`);
-    if (target) {
-      target.style.display = 'block';
-    }
-    
-    // Update active nav links
-    document.querySelectorAll('.single-nav-link').forEach(link => {
-      if (link.getAttribute('data-target') === pageId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+  window.openMobileMenu = function() {
+    mobileMenuBtn?.classList.add('open');
+    mobileMenuDrawer?.classList.add('active');
+    document.body.classList.add('menu-open');
+  };
+
+  window.closeMobileMenu = function() {
+    mobileMenuBtn?.classList.remove('open');
+    mobileMenuDrawer?.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  };
+
+  // Close mobile menu when clicking any mobile navigation link
+  document.querySelectorAll('.mobile-nav-links a, .mobile-drawer-cta a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileMenu();
     });
+  });
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // --- Fullscreen 16:9 Presentation Mode ---
-  window.toggleFullscreenShowcase = function() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(err => {
-        console.warn(`Fullscreen error: ${err.message}`);
-      });
-    } else {
-      document.exitFullscreen();
+  // Close mobile menu if clicked on the darkened backdrop outside the inner content
+  mobileMenuDrawer?.addEventListener('click', (e) => {
+    if (e.target === mobileMenuDrawer) {
+      closeMobileMenu();
     }
-  };
+  });
 
-  // --- Design System Drawer ---
-  const dsDrawer = document.getElementById('dsDrawer');
-  window.toggleDesignSystem = function() {
-    dsDrawer?.classList.toggle('open');
-  };
+  // Close mobile menu on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+      closeModal();
+    }
+  });
 
-  // Copy Color HEX on Click
-  window.copyColor = function(hex, el) {
-    navigator.clipboard?.writeText(hex).then(() => {
-      const orig = el.innerText;
-      el.innerText = 'COPIED!';
-      setTimeout(() => { el.innerText = orig; }, 1500);
-    });
-  };
+  // Auto-close mobile menu if window resized to desktop (> 992px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && mobileMenuBtn?.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
 
   // --- Interactive Global Presence Hub Highlighting ---
   window.highlightHub = function(hubKey) {
     // Reset all pins & hub cards
     document.querySelectorAll('.map-pin').forEach(pin => {
-      pin.setAttribute('fill', '#009688');
-      pin.setAttribute('r', '7');
+      const circle = pin.querySelector('circle:nth-child(2)');
+      if (circle) {
+        circle.setAttribute('fill', '#009688');
+        circle.setAttribute('r', '8');
+      }
     });
+
     document.querySelectorAll('.hub-card').forEach(card => {
       card.style.borderColor = '#e2e8f0';
       card.style.backgroundColor = '#ffffff';
@@ -119,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+
   // --- Dosage Form Matrix Interactive Details ---
   window.selectDosageForm = function(dosageType) {
     document.querySelectorAll('.dosage-card').forEach(c => {
@@ -132,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+
   // --- Contact Form Submission Handler ---
   window.handleInquirySubmit = function(e) {
     e.preventDefault();
@@ -141,10 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = form.email?.value || '';
     const track = form.inquiryType?.value || 'General Pharmaceutical Inquiry';
 
-    // Random Ref Number
+    // Random Reference Number
     const refNum = 'DVZ-' + Math.floor(100000 + Math.random() * 900000);
 
-    // Populate modal
+    // Populate confirmation modal
     const modalName = document.getElementById('modalLeadName');
     const modalRef = document.getElementById('modalRefNum');
     const modalSummary = document.getElementById('modalSummary');
@@ -171,8 +144,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.classList.remove('active');
   };
 
-  // Initial Responsive Fit
-  if (window.innerWidth < 1440) {
-    setZoom('fit');
-  }
 });

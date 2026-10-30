@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Contact Us — Dovizio Pharmaceutical Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,71 +15,111 @@
   <!-- Global Header Navigation -->
   <nav class="site-nav">
     <div class="site-logo">
-      <a href="home.html" style="display:flex; align-items:center; gap:10px;">
-        <img src="assets/logo.png" alt="Dovizio">
+      <a href="home.html" class="site-logo-link">
+        <img src="assets/logo.png" alt="Dovizio Logo" class="logo-img">
         <div class="logo-text-wrap">
           <span class="logo-brand-name">Dovizio</span>
           <span class="logo-sub-name">Pharmaceutical Solutions</span>
         </div>
       </a>
     </div>
+
+    <!-- Desktop Navigation Links -->
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="global-presence.html">Global Presence</a></li>
       <li><a href="contact.html" class="active">Contact Us</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <a href="#inquiryForm" class="nav-cta">Submit RFP</a>
+
+    <!-- Action & Hamburger Toggle -->
+    <div class="nav-actions">
+      <a href="#inquiryForm" class="nav-cta nav-cta-desktop">Submit RFP</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile & Tablet Slide-Down Menu Drawer -->
+  <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="home.html"><span class="icon">🏠</span> Home</a></li>
+        <li><a href="about.html"><span class="icon">🏢</span> About Us</a></li>
+        <li><a href="global-presence.html"><span class="icon">🌐</span> Global Presence</a></li>
+        <li><a href="contact.html" class="active"><span class="icon">✉️</span> Contact Us</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="#inquiryForm" class="btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:14px;" onclick="closeMobileMenu()">
+          Submit Confidential RFP ➔
+        </a>
+      </div>
+      <div class="mobile-drawer-info">
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Corporate HQ:</span>
+          <span class="mobile-info-val">Raleigh, NC, USA</span>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Inquiries:</span>
+          <a href="mailto:bd@doviziollc.com" class="mobile-info-val text-teal">bd@doviziollc.com</a>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Call / WhatsApp:</span>
+          <a href="tel:+919979895682" class="mobile-info-val">+91-9979895682</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact Hero Banner (Slide 15) -->
-  <section class="hero-section" style="padding: 80px 40px 70px;">
+  <section class="hero-section">
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
       <div class="hero-tag">Strategic Partnership</div>
-      <h1 class="hero-title" style="font-size: 42px; max-width: 840px;">
+      <h1 class="hero-title">
         Let’s Build the Right Pharma Path
       </h1>
-      <p class="hero-subtitle" style="font-size: 16px; max-width: 720px; margin-bottom: 30px;">
+      <p class="hero-subtitle">
         Start with a product, a market, or a supply challenge — we coordinate the global ecosystem toward a compliant commercial solution.
       </p>
       
       <!-- 3 Strategic Engagement Drivers (Slide 15) -->
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; max-width:960px;">
-        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:16px 20px; border:1px solid rgba(255,255,255,0.15);">
-          <div style="color:#2dd4bf; font-weight:700; font-size:14px; margin-bottom:4px;">Product Opportunity</div>
-          <p style="color:#cbd5e1; font-size:12.5px;">Portfolio strategy, niche molecules & product selection.</p>
+      <div class="drivers-grid">
+        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:18px 20px; border:1px solid rgba(255,255,255,0.15);">
+          <div style="color:#2dd4bf; font-weight:700; font-size:14.5px; margin-bottom:4px;">Product Opportunity</div>
+          <p style="color:#cbd5e1; font-size:12.5px; line-height:1.5;">Portfolio strategy, niche molecules & product selection.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:16px 20px; border:1px solid rgba(255,255,255,0.15);">
-          <div style="color:#2dd4bf; font-weight:700; font-size:14px; margin-bottom:4px;">Supply Challenge</div>
-          <p style="color:#cbd5e1; font-size:12.5px;">API synthesis, RLD sourcing & CDMO partner matching.</p>
+        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:18px 20px; border:1px solid rgba(255,255,255,0.15);">
+          <div style="color:#2dd4bf; font-weight:700; font-size:14.5px; margin-bottom:4px;">Supply Challenge</div>
+          <p style="color:#cbd5e1; font-size:12.5px; line-height:1.5;">API synthesis, RLD sourcing & CDMO partner matching.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:16px 20px; border:1px solid rgba(255,255,255,0.15);">
-          <div style="color:#2dd4bf; font-weight:700; font-size:14px; margin-bottom:4px;">Market Expansion</div>
-          <p style="color:#cbd5e1; font-size:12.5px;">Licensing, dossier support & global commercialization.</p>
+        <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:18px 20px; border:1px solid rgba(255,255,255,0.15);">
+          <div style="color:#2dd4bf; font-weight:700; font-size:14.5px; margin-bottom:4px;">Market Expansion</div>
+          <p style="color:#cbd5e1; font-size:12.5px; line-height:1.5;">Licensing, dossier support & global commercialization.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Form & Headquarters Details -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;" id="inquiryForm">
-    <div class="contact-layout" style="gap: 40px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;" id="inquiryForm">
+    <div class="contact-layout">
 
       <!-- Corporate Information Panel -->
-      <div class="contact-info-panel" style="padding: 44px 36px;">
+      <div class="contact-info-panel">
         <div>
           <div style="font-size:12px; font-weight:800; color:#2dd4bf; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Connect Directly</div>
-          <h2 style="color:#ffffff; font-size:26px; font-weight:800; margin-bottom:28px;">Corporate Contacts</h2>
+          <h2 style="color:#ffffff; font-size: clamp(22px, 3vw, 26px); font-weight:800; margin-bottom:28px;">Corporate Contacts</h2>
 
           <div class="contact-item">
-            <div class="contact-icon-box" style="width:42px; height:42px; font-size:18px;">📍</div>
+            <div class="contact-icon-box">📍</div>
             <div>
               <div class="contact-item-title">Global Corporate Headquarters</div>
-              <div class="contact-item-value" style="font-size:15px; line-height:1.5;">
+              <div class="contact-item-value">
                 9121 Anson Way, Suite 200<br>
                 Raleigh, NC 27615, USA
               </div>
@@ -87,20 +127,20 @@
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon-box" style="width:42px; height:42px; font-size:18px;">✉️</div>
+            <div class="contact-icon-box">✉️</div>
             <div>
               <div class="contact-item-title">Business Development</div>
-              <div class="contact-item-value" style="font-size:15px;">
-                <a href="mailto:bd@doviziollc.com" class="contact-email-link" style="font-size:15px;">bd@doviziollc.com</a>
+              <div class="contact-item-value">
+                <a href="mailto:bd@doviziollc.com" class="contact-email-link">bd@doviziollc.com</a>
               </div>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon-box" style="width:42px; height:42px; font-size:18px;">📞</div>
+            <div class="contact-icon-box">📞</div>
             <div>
               <div class="contact-item-title">Direct Telephone & WhatsApp</div>
-              <div class="contact-item-value" style="font-size:15px;">
+              <div class="contact-item-value">
                 <a href="tel:+919979895682" style="color:#fff;">+91-9979895682</a><br>
                 <a href="tel:+1123456789" style="color:#cbd5e1; font-size:13px;">+1 (123) 456-7890 (US Inquiries)</a>
               </div>
@@ -108,10 +148,10 @@
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon-box" style="width:42px; height:42px; font-size:18px;">🌐</div>
+            <div class="contact-icon-box">🌐</div>
             <div>
               <div class="contact-item-title">Official Web Portal</div>
-              <div class="contact-item-value" style="font-size:15px;">
+              <div class="contact-item-value">
                 <a href="https://www.doviziophrama.com" target="_blank" class="contact-email-link">www.doviziophrama.com</a>
               </div>
             </div>
@@ -125,9 +165,9 @@
       </div>
 
       <!-- RFP & Partnership Request Form -->
-      <div class="contact-form-panel" style="padding: 44px 36px;">
+      <div class="contact-form-panel">
         <div style="font-size:12px; font-weight:800; color:var(--teal-primary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">Inquiry Pipeline</div>
-        <h2 style="color:var(--navy-dark); font-size:26px; font-weight:800; margin-bottom:10px;">Request a Technical Proposal</h2>
+        <h2 style="color:var(--navy-dark); font-size: clamp(22px, 3vw, 26px); font-weight:800; margin-bottom:10px;">Request a Technical Proposal</h2>
         <p style="font-size:14px; color:var(--text-secondary); margin-bottom:28px;">
           Submit your product specifications, target manufacturing volumes, or regulatory requirements.
         </p>

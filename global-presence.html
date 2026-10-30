@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Global Presence — Dovizio Pharmaceutical Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,35 +15,75 @@
   <!-- Global Header Navigation -->
   <nav class="site-nav">
     <div class="site-logo">
-      <a href="home.html" style="display:flex; align-items:center; gap:10px;">
-        <img src="assets/logo.png" alt="Dovizio">
+      <a href="home.html" class="site-logo-link">
+        <img src="assets/logo.png" alt="Dovizio Logo" class="logo-img">
         <div class="logo-text-wrap">
           <span class="logo-brand-name">Dovizio</span>
           <span class="logo-sub-name">Pharmaceutical Solutions</span>
         </div>
       </a>
     </div>
+
+    <!-- Desktop Navigation Links -->
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="global-presence.html" class="active">Global Presence</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:10px;">
-      <a href="contact.html" class="nav-cta">Global Inquiries</a>
+
+    <!-- Action & Hamburger Toggle -->
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta nav-cta-desktop">Global Inquiries</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile & Tablet Slide-Down Menu Drawer -->
+  <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="home.html"><span class="icon">🏠</span> Home</a></li>
+        <li><a href="about.html"><span class="icon">🏢</span> About Us</a></li>
+        <li><a href="global-presence.html" class="active"><span class="icon">🌐</span> Global Presence</a></li>
+        <li><a href="contact.html"><span class="icon">✉️</span> Contact Us</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="contact.html" class="btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:14px;">
+          Global Inquiries ➔
+        </a>
+      </div>
+      <div class="mobile-drawer-info">
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Corporate HQ:</span>
+          <span class="mobile-info-val">Raleigh, NC, USA</span>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Inquiries:</span>
+          <a href="mailto:bd@doviziollc.com" class="mobile-info-val text-teal">bd@doviziollc.com</a>
+        </div>
+        <div class="mobile-info-item">
+          <span class="mobile-info-label">Call / WhatsApp:</span>
+          <a href="tel:+919979895682" class="mobile-info-val">+91-9979895682</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Global Hero Banner (Slide 5, 9, 15) -->
-  <section class="hero-section" style="padding: 80px 40px 70px;">
+  <section class="hero-section">
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
       <div class="hero-tag">Strategic Hubs & Market Access</div>
-      <h1 class="hero-title" style="font-size: 42px; max-width: 860px;">
+      <h1 class="hero-title">
         Dual Strategic Operating Hubs with Seamless Global Reach
       </h1>
-      <p class="hero-subtitle" style="font-size: 16px; max-width: 720px; margin-bottom: 30px;">
+      <p class="hero-subtitle">
         Operating from Raleigh, North Carolina and strategic research hubs across India, Dovizio delivers coordinated pharmaceutical execution spanning North America, Europe, LATAM, the GCC/Middle East, and Africa.
       </p>
       <div class="hero-pills">
@@ -56,20 +96,20 @@
   </section>
 
   <!-- Interactive Operations Map & Footprint -->
-  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
-    <div class="global-map-card" style="padding: 40px 32px; margin-bottom: 40px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto;">
+    <div class="global-map-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
         <div>
-          <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:4px;">Global Infrastructure & Trade Routes</h2>
+          <h2 style="font-size: clamp(20px, 3vw, 24px); font-weight:800; color:#fff; margin-bottom:4px;">Global Infrastructure & Trade Routes</h2>
           <p style="font-size:13px; color:#cbd5e1;">Click any node on the map to review regional capabilities and compliance profiles.</p>
         </div>
-        <div style="display:flex; gap:8px;">
-          <button onclick="highlightHub('usa')" class="control-btn" style="font-size:12px; padding:5px 12px;">USA Hub</button>
-          <button onclick="highlightHub('india')" class="control-btn" style="font-size:12px; padding:5px 12px;">India Hub</button>
-          <button onclick="highlightHub('europe')" class="control-btn" style="font-size:12px; padding:5px 12px;">Europe</button>
-          <button onclick="highlightHub('latam')" class="control-btn" style="font-size:12px; padding:5px 12px;">LATAM</button>
-          <button onclick="highlightHub('gcc')" class="control-btn" style="font-size:12px; padding:5px 12px;">GCC</button>
-          <button onclick="highlightHub('africa')" class="control-btn" style="font-size:12px; padding:5px 12px;">Africa</button>
+        <div class="map-filter-buttons">
+          <button onclick="highlightHub('usa')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">USA Hub</button>
+          <button onclick="highlightHub('india')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">India Hub</button>
+          <button onclick="highlightHub('europe')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">Europe</button>
+          <button onclick="highlightHub('latam')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">LATAM</button>
+          <button onclick="highlightHub('gcc')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">GCC</button>
+          <button onclick="highlightHub('africa')" class="btn-outline-white" style="font-size:12px; padding:6px 14px;">Africa</button>
         </div>
       </div>
 
@@ -94,14 +134,14 @@
 
           <!-- USA HQ Pin -->
           <g class="map-pin" onclick="highlightHub('usa')">
-            <circle cx="230" cy="160" r="20" fill="rgba(20,184,166,0.3)"/>
+            <circle cx="230" cy="160" r="22" fill="rgba(20,184,166,0.3)"/>
             <circle id="pin-usa" cx="230" cy="160" r="10" fill="#38bdf8"/>
             <text x="230" y="132" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">USA HQ (Raleigh, NC)</text>
           </g>
 
           <!-- India Hub Pin -->
           <g class="map-pin" onclick="highlightHub('india')">
-            <circle cx="680" cy="270" r="20" fill="rgba(20,184,166,0.3)"/>
+            <circle cx="680" cy="270" r="22" fill="rgba(20,184,166,0.3)"/>
             <circle id="pin-india" cx="680" cy="270" r="10" fill="#009688"/>
             <text x="680" y="244" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">India R&D Hub</text>
           </g>
@@ -134,75 +174,75 @@
     </div>
 
     <!-- Hub Cards Detailed Grid -->
-    <div class="hubs-grid" style="gap: 24px;">
-      <div class="hub-card primary" id="card-usa" onclick="highlightHub('usa')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🇺🇸</div>
-        <div class="hub-name" style="font-size: 20px;">United States Hub</div>
+    <div class="hubs-grid">
+      <div class="hub-card primary" id="card-usa" onclick="highlightHub('usa')">
+        <div class="hub-flag">🇺🇸</div>
+        <div class="hub-name">United States Hub</div>
         <div class="hub-role">Corporate HQ & North American Governance</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Headquartered at 9121 Anson Way, Suite 200, Raleigh, NC. Manages US FDA API DMF filings, commercial distribution agreements, legal pedigree oversight, and specialized API supply for 503A / 503B compounding pharmacies.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: US FDA Audits • 503A/503B APIs • In-Licensing
         </div>
       </div>
 
-      <div class="hub-card primary" id="card-india" onclick="highlightHub('india')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🇮🇳</div>
-        <div class="hub-name" style="font-size: 20px;">India Strategic Hub</div>
+      <div class="hub-card primary" id="card-india" onclick="highlightHub('india')">
+        <div class="hub-flag">🇮🇳</div>
+        <div class="hub-name">India Strategic Hub</div>
         <div class="hub-role">R&D, Formulation & Manufacturing Engine</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Coordinates complex chemical synthesis, analytical method validation, tech transfer, and rigorous site audits across a network of premier WHO-GMP & US FDA inspected manufacturing facilities.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: Complex APIs • Peptides • Scale-Up • BE Studies
         </div>
       </div>
 
-      <div class="hub-card" id="card-europe" onclick="highlightHub('europe')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🇪🇺</div>
-        <div class="hub-name" style="font-size: 20px;">Europe</div>
+      <div class="hub-card" id="card-europe" onclick="highlightHub('europe')">
+        <div class="hub-flag">🇪🇺</div>
+        <div class="hub-name">Europe</div>
         <div class="hub-role">EU-GMP & Annex 1 Sterile Excellence</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Facilitates European CEP filings, EU-GMP QP release coordination, and sterile parenteral manufacturing strictly conforming to revised Annex 1 sterile standards.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: Annex 1 Steriles • CEP Dossiers • EU QP Release
         </div>
       </div>
 
-      <div class="hub-card" id="card-latam" onclick="highlightHub('latam')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🌎</div>
-        <div class="hub-name" style="font-size: 20px;">Latin America</div>
+      <div class="hub-card" id="card-latam" onclick="highlightHub('latam')">
+        <div class="hub-flag">🌎</div>
+        <div class="hub-name">Latin America</div>
         <div class="hub-role">Fast-Track Dossiers & Private Label</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Provides comprehensive registration dossier support and customized white-label solutions tailored to regulatory requirements in Brazil (ANVISA), Mexico (COFEPRIS), Colombia, and Central America.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: ANVISA • COFEPRIS • Private Label Programs
         </div>
       </div>
 
-      <div class="hub-card" id="card-gcc" onclick="highlightHub('gcc')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🌍</div>
-        <div class="hub-name" style="font-size: 20px;">GCC & Middle East</div>
+      <div class="hub-card" id="card-gcc" onclick="highlightHub('gcc')">
+        <div class="hub-flag">🌍</div>
+        <div class="hub-name">GCC & Middle East</div>
         <div class="hub-role">Institutional Tenders & Specialty Hospital Lines</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Supplying high-demand injectables, oncology therapeutics, and essential generics for health ministry tenders and leading commercial hospital systems across Saudi Arabia, the UAE, and the GCC.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: SFDA Filings • Hospital Tenders • Specialty Care
         </div>
       </div>
 
-      <div class="hub-card" id="card-africa" onclick="highlightHub('africa')" style="padding: 28px 24px;">
-        <div class="hub-flag" style="font-size: 28px;">🌍</div>
-        <div class="hub-name" style="font-size: 20px;">Africa</div>
+      <div class="hub-card" id="card-africa" onclick="highlightHub('africa')">
+        <div class="hub-flag">🌍</div>
+        <div class="hub-name">Africa</div>
         <div class="hub-role">Universal Access to Essential Medicines</div>
-        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+        <p class="hub-details">
           Partnering with regional health agencies and global procurement consortiums to ensure secure, affordable, WHO-prequalified oral solids, antiseptics, and anti-infectives.
         </p>
-        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700; margin-top: 10px;">
           Key Coverage: WHO-Prequalified • Essential Anti-Infectives
         </div>
       </div>
@@ -210,14 +250,14 @@
   </section>
 
   <!-- Cold Chain & Sourcing Workflow (Slide 10) -->
-  <section class="section-wrap alt-bg" style="padding: 70px 24px;">
+  <section class="section-wrap alt-bg">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div class="section-header">
         <div class="section-subtitle">A Clear, Coordinated Path</div>
-        <h2 class="section-title" style="font-size: 32px;">White-Label & RLD Global Sourcing</h2>
+        <h2 class="section-title">White-Label & RLD Global Sourcing</h2>
         <p class="section-desc">Customized pharmaceutical products and reliable access to quality reference products at competitive prices.</p>
       </div>
-      <div class="workflow-row" style="grid-template-columns: repeat(6, 1fr); gap: 14px;">
+      <div class="workflow-row steps-6">
         <div class="workflow-step">
           <div class="workflow-num">01</div>
           <div class="workflow-label">Requirements</div>
