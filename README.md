@@ -21,6 +21,10 @@ A cohesive, modern, and empathetic 4-page corporate website and Figma-style pres
    - **Soft Mint / Ice Surfaces**: `#E6F4F1`, `#F0FDFA`
    - **Warm Whitespace & Slate**: `#FFFFFF`, `#F8FAFC`, `#64748B`
    - **Typography**: Plus Jakarta Sans, high-contrast, WCAG AAA accessible hierarchies.
+3. **Full Device Responsiveness (Mobile, Tablet, iPad & Desktop)**:
+   - Animated 3-bar hamburger drawer navigation below 992px (`iPad` and `Mobile`).
+   - Touch hit targets (≥ 44px) and iOS Safari auto-zoom prevention (`font-size: 16px` on inputs).
+   - Fluid `clamp(...)` typography and multi-column grid collapses tailored for iPhone, Android, iPad Mini, iPad Air, and iPad Pro.
 
 ---
 
@@ -91,18 +95,12 @@ python -m http.server 8000
 npx serve .
 ```
 
-Open `http://localhost:8000` in your web browser. You can also simply double-click `home.html` to open it directly in Chrome, Edge, or Safari.
+Open `http://localhost:8000` in your web browser. You can also simply double-click `home.html` or `index.html` to open it directly in Chrome, Edge, or Safari.
 
 ---
 
 ## 🌐 Deploy to GitHub Pages
 
-1. Commit and push the files to your repository:
-   ```bash
-   git add .
-   git commit -m "feat: complete Dovizio corporate 4-page showcase and website"
-   git push origin main
-   ```
-2. In your repository on GitHub (`https://github.com/dkshah/Dovizio`), navigate to **Settings** > **Pages**.
-3. Under **Build and deployment** > **Branch**, select `main` branch and `/ (root)` folder.
-4. Click **Save**. Your site will be live at `https://dkshah.github.io/Dovizio/`.
+1. In your repository on GitHub (`https://github.com/dkshah/Dovizio`), navigate to **Settings** > **Pages**.
+2. Under **Build and deployment** > **Branch**, select `main` branch and `/ (root)` folder.
+3. Click **Save**. Your site will be live at `https://dkshah.github.io/Dovizio/`.
