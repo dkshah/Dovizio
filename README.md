@@ -10,15 +10,12 @@ A cohesive, modern, and empathetic 4-page corporate website and Figma-style pres
 
 ## 🌟 Key Features
 
-1. **Dual-Mode Experience**:
-   - **Figma Studio 16:9 Canvas Showcase (`index.html`)**: Displays all 4 pages (*Home*, *About Us*, *Global Presence*, *Contact Us*) side-by-side in high-resolution browser frames with dynamic zoom (Auto-Fit, 55%, 75%, 100%), presentation mode, and live interactive state inspection.
-   - **Full Interactive Website Mode**: Browse individual full-width responsive pages seamlessly.
-2. **Individual Standalone Pages**:
+1. **Four Core Pages**:
    - [Home Page (`home.html`)](home.html): Hero value proposition, strategic pillars, 6-category dosage form breadth, and 5-stage delivery workflow.
    - [About Us Page (`about.html`)](about.html): Enterprise profile, 100+ years combined experience, mission & vision, 4 core values, and analytical testing services.
    - [Global Presence Page (`global-presence.html`)](global-presence.html): Interactive world map, USA & India strategic hubs, European EU-GMP Annex 1 compliance, and regional trade routes (LATAM, GCC, Africa).
    - [Contact Us Page (`contact.html`)](contact.html): Global headquarters directory, executive email routing, interactive RFP / technical proposal dispatch form, and 24h SLA response guarantee.
-3. **Design System & Aesthetics**:
+2. **Design System & Aesthetics**:
    - **Calming Healthcare Teal**: `#009688` (Primary), `#0D9488` (Dark), `#14B8A6` (Vibrant), `#2DD4BF` (Accent)
    - **Deep Authoritative Navy Blue**: `#0A192F` (Deep), `#0D213F` (Card Surface), `#1E3A5F` (Accent)
    - **Soft Mint / Ice Surfaces**: `#E6F4F1`, `#F0FDFA`
@@ -34,10 +31,9 @@ Dovizio/
 ├── assets/
 │   └── logo.png                # Official Dovizio lotus brand mark
 ├── css/
-│   └── styles.css              # Design system, glassmorphic styling, figma canvas layout
+│   └── styles.css              # Design system, glassmorphic styling, components
 ├── js/
-│   └── main.js                 # Studio zoom/pan controller, hub map pins, dosage tabs, RFP dispatch
-├── index.html                  # Central 4-screen Figma canvas & interactive switcher
+│   └── main.js                 # Hub map pins, dosage form tabs, RFP dispatch
 ├── home.html                   # Standalone Home page
 ├── about.html                  # Standalone About Us page
 ├── global-presence.html        # Standalone Global Presence page
@@ -98,7 +94,7 @@ python -m http.server 8000
 npx serve .
 ```
 
-Open `http://localhost:8000` in your web browser. You can also simply double-click `index.html` to open it directly in Chrome, Edge, or Safari.
+Open `http://localhost:8000` in your web browser. You can also simply double-click `home.html` to open it directly in Chrome, Edge, or Safari.
 
 ---
 
