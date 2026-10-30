@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Presence — Dovizio Pharmaceutical Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- Global Header Navigation -->
+  <nav class="site-nav">
+    <div class="site-logo">
+      <a href="home.html" style="display:flex; align-items:center; gap:10px;">
+        <img src="assets/logo.png" alt="Dovizio">
+        <div class="logo-text-wrap">
+          <span class="logo-brand-name">Dovizio</span>
+          <span class="logo-sub-name">Pharmaceutical Solutions</span>
+        </div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="global-presence.html" class="active">Global Presence</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <a href="index.html" class="control-btn" style="background:#0a192f; color:#fff; border:none; padding:7px 12px; font-size:12px;">
+        👁️ 4-Page Figma Canvas
+      </a>
+      <a href="contact.html" class="nav-cta">Global Inquiries</a>
+    </div>
+  </nav>
+
+  <!-- Global Hero Banner (Slide 5, 9, 15) -->
+  <section class="hero-section" style="padding: 80px 40px 70px;">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="hero-tag">Strategic Hubs & Market Access</div>
+      <h1 class="hero-title" style="font-size: 42px; max-width: 860px;">
+        Dual Strategic Operating Hubs with Seamless Global Reach
+      </h1>
+      <p class="hero-subtitle" style="font-size: 16px; max-width: 720px; margin-bottom: 30px;">
+        Operating from Raleigh, North Carolina and strategic research hubs across India, Dovizio delivers coordinated pharmaceutical execution spanning North America, Europe, LATAM, the GCC/Middle East, and Africa.
+      </p>
+      <div class="hero-pills">
+        <div class="hero-pill"><span class="dot"></span> USA Corporate HQ (Raleigh, NC)</div>
+        <div class="hero-pill"><span class="dot"></span> India R&D & CDMO Coordination</div>
+        <div class="hero-pill"><span class="dot"></span> End-to-End Cold-Chain Logistics</div>
+        <div class="hero-pill"><span class="dot"></span> Full Regulatory Pedigree</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Operations Map & Footprint -->
+  <section class="section-wrap" style="max-width: 1200px; margin: 0 auto; padding: 70px 24px;">
+    <div class="global-map-card" style="padding: 40px 32px; margin-bottom: 40px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:4px;">Global Infrastructure & Trade Routes</h2>
+          <p style="font-size:13px; color:#cbd5e1;">Click any node on the map to review regional capabilities and compliance profiles.</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button onclick="highlightHub('usa')" class="control-btn" style="font-size:12px; padding:5px 12px;">USA Hub</button>
+          <button onclick="highlightHub('india')" class="control-btn" style="font-size:12px; padding:5px 12px;">India Hub</button>
+          <button onclick="highlightHub('europe')" class="control-btn" style="font-size:12px; padding:5px 12px;">Europe</button>
+          <button onclick="highlightHub('latam')" class="control-btn" style="font-size:12px; padding:5px 12px;">LATAM</button>
+          <button onclick="highlightHub('gcc')" class="control-btn" style="font-size:12px; padding:5px 12px;">GCC</button>
+          <button onclick="highlightHub('africa')" class="control-btn" style="font-size:12px; padding:5px 12px;">Africa</button>
+        </div>
+      </div>
+
+      <!-- High-Fidelity SVG World Map -->
+      <div class="map-svg-wrap">
+        <svg viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Continents -->
+          <path d="M150 120 Q 200 100, 280 110 T 320 180 T 260 220 T 170 200 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M220 250 Q 280 270, 270 360 T 220 420 T 190 320 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M460 100 Q 550 80, 580 150 T 480 200 T 440 140 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M480 210 Q 560 220, 550 340 T 490 390 T 450 280 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M600 110 Q 750 90, 840 150 T 780 260 T 640 220 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M650 230 Q 700 240, 710 320 T 660 330 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+          <path d="M780 320 Q 880 310, 870 410 T 780 390 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+          <!-- High-Tech Inter-Hub Connections -->
+          <path d="M 230 160 Q 430 100, 680 270" stroke="#14b8a6" stroke-width="2.5" stroke-dasharray="5 5" opacity="0.8"/>
+          <path d="M 230 160 Q 360 120, 500 140" stroke="#14b8a6" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+          <path d="M 680 270 Q 590 280, 510 310" stroke="#14b8a6" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+          <path d="M 230 160 Q 220 220, 230 310" stroke="#14b8a6" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+          <path d="M 680 270 Q 640 240, 590 210" stroke="#14b8a6" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+
+          <!-- USA HQ Pin -->
+          <g class="map-pin" onclick="highlightHub('usa')">
+            <circle cx="230" cy="160" r="20" fill="rgba(20,184,166,0.3)"/>
+            <circle id="pin-usa" cx="230" cy="160" r="10" fill="#38bdf8"/>
+            <text x="230" y="132" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">USA HQ (Raleigh, NC)</text>
+          </g>
+
+          <!-- India Hub Pin -->
+          <g class="map-pin" onclick="highlightHub('india')">
+            <circle cx="680" cy="270" r="20" fill="rgba(20,184,166,0.3)"/>
+            <circle id="pin-india" cx="680" cy="270" r="10" fill="#009688"/>
+            <text x="680" y="244" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">India R&D Hub</text>
+          </g>
+
+          <!-- Europe Pin -->
+          <g class="map-pin" onclick="highlightHub('europe')">
+            <circle id="pin-europe" cx="500" cy="140" r="8" fill="#009688"/>
+            <text x="500" y="122" fill="#cbd5e1" font-size="11" font-weight="700" text-anchor="middle">Europe (EU-GMP)</text>
+          </g>
+
+          <!-- LATAM Pin -->
+          <g class="map-pin" onclick="highlightHub('latam')">
+            <circle id="pin-latam" cx="230" cy="310" r="8" fill="#009688"/>
+            <text x="230" y="338" fill="#cbd5e1" font-size="11" font-weight="700" text-anchor="middle">Latin America</text>
+          </g>
+
+          <!-- GCC Pin -->
+          <g class="map-pin" onclick="highlightHub('gcc')">
+            <circle id="pin-gcc" cx="590" cy="210" r="8" fill="#009688"/>
+            <text x="590" y="192" fill="#cbd5e1" font-size="11" font-weight="700" text-anchor="middle">GCC / MENA</text>
+          </g>
+
+          <!-- Africa Pin -->
+          <g class="map-pin" onclick="highlightHub('africa')">
+            <circle id="pin-africa" cx="510" cy="310" r="8" fill="#009688"/>
+            <text x="510" y="338" fill="#cbd5e1" font-size="11" font-weight="700" text-anchor="middle">Africa</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Hub Cards Detailed Grid -->
+    <div class="hubs-grid" style="gap: 24px;">
+      <div class="hub-card primary" id="card-usa" onclick="highlightHub('usa')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🇺🇸</div>
+        <div class="hub-name" style="font-size: 20px;">United States Hub</div>
+        <div class="hub-role">Corporate HQ & North American Governance</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Headquartered at 9121 Anson Way, Suite 200, Raleigh, NC. Manages US FDA API DMF filings, commercial distribution agreements, legal pedigree oversight, and specialized API supply for 503A / 503B compounding pharmacies.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: US FDA Audits • 503A/503B APIs • In-Licensing
+        </div>
+      </div>
+
+      <div class="hub-card primary" id="card-india" onclick="highlightHub('india')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🇮🇳</div>
+        <div class="hub-name" style="font-size: 20px;">India Strategic Hub</div>
+        <div class="hub-role">R&D, Formulation & Manufacturing Engine</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Coordinates complex chemical synthesis, analytical method validation, tech transfer, and rigorous site audits across a network of premier WHO-GMP & US FDA inspected manufacturing facilities.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: Complex APIs • Peptides • Scale-Up • BE Studies
+        </div>
+      </div>
+
+      <div class="hub-card" id="card-europe" onclick="highlightHub('europe')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🇪🇺</div>
+        <div class="hub-name" style="font-size: 20px;">Europe</div>
+        <div class="hub-role">EU-GMP & Annex 1 Sterile Excellence</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Facilitates European CEP filings, EU-GMP QP release coordination, and sterile parenteral manufacturing strictly conforming to revised Annex 1 sterile standards.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: Annex 1 Steriles • CEP Dossiers • EU QP Release
+        </div>
+      </div>
+
+      <div class="hub-card" id="card-latam" onclick="highlightHub('latam')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🌎</div>
+        <div class="hub-name" style="font-size: 20px;">Latin America</div>
+        <div class="hub-role">Fast-Track Dossiers & Private Label</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Provides comprehensive registration dossier support and customized white-label solutions tailored to regulatory requirements in Brazil (ANVISA), Mexico (COFEPRIS), Colombia, and Central America.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: ANVISA • COFEPRIS • Private Label Programs
+        </div>
+      </div>
+
+      <div class="hub-card" id="card-gcc" onclick="highlightHub('gcc')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🌍</div>
+        <div class="hub-name" style="font-size: 20px;">GCC & Middle East</div>
+        <div class="hub-role">Institutional Tenders & Specialty Hospital Lines</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Supplying high-demand injectables, oncology therapeutics, and essential generics for health ministry tenders and leading commercial hospital systems across Saudi Arabia, the UAE, and the GCC.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: SFDA Filings • Hospital Tenders • Specialty Care
+        </div>
+      </div>
+
+      <div class="hub-card" id="card-africa" onclick="highlightHub('africa')" style="padding: 28px 24px;">
+        <div class="hub-flag" style="font-size: 28px;">🌍</div>
+        <div class="hub-name" style="font-size: 20px;">Africa</div>
+        <div class="hub-role">Universal Access to Essential Medicines</div>
+        <p class="hub-details" style="font-size: 13.5px; margin-bottom: 12px;">
+          Partnering with regional health agencies and global procurement consortiums to ensure secure, affordable, WHO-prequalified oral solids, antiseptics, and anti-infectives.
+        </p>
+        <div style="font-size: 11.5px; color: var(--teal-primary); font-weight: 700;">
+          Key Coverage: WHO-Prequalified • Essential Anti-Infectives
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cold Chain & Sourcing Workflow (Slide 10) -->
+  <section class="section-wrap alt-bg" style="padding: 70px 24px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="section-header">
+        <div class="section-subtitle">A Clear, Coordinated Path</div>
+        <h2 class="section-title" style="font-size: 32px;">White-Label & RLD Global Sourcing</h2>
+        <p class="section-desc">Customized pharmaceutical products and reliable access to quality reference products at competitive prices.</p>
+      </div>
+      <div class="workflow-row" style="grid-template-columns: repeat(6, 1fr); gap: 14px;">
+        <div class="workflow-step">
+          <div class="workflow-num">01</div>
+          <div class="workflow-label">Requirements</div>
+          <p class="workflow-desc">Product selection, formulation, packaging specs</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">02</div>
+          <div class="workflow-label">Selection</div>
+          <p class="workflow-desc">Reputable USA & EU suppliers / vetted CDMOs</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">03</div>
+          <div class="workflow-label">Partner Fit</div>
+          <p class="workflow-desc">Flexible, qualified partner manufacturing network</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">04</div>
+          <div class="workflow-label">Regulatory</div>
+          <p class="workflow-desc">Registration dossier & full regulatory pedigree</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">05</div>
+          <div class="workflow-label">Procurement</div>
+          <p class="workflow-desc">Competitive volume contract execution</p>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">06</div>
+          <div class="workflow-label">Delivery</div>
+          <p class="workflow-desc">End-to-end validated cold-chain global transport</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Dovizio">
+          <span style="font-weight:700; color:#fff; font-size:15px;">Dovizio Pharmaceutical Solutions</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="global-presence.html">Global Presence</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Dovizio Pharmaceutical Solutions LLC. All rights reserved.</span>
+        <span>Corporate HQ: 9121 Anson Way, Suite 200, Raleigh, NC 27615, USA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

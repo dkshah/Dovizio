@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dovizio Pharmaceutical Solutions — Corporate Presentation & UI/UX Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- Top Studio Header / Presentation Toolbar -->
+  <header class="studio-header">
+    <div class="studio-brand">
+      <img src="assets/logo.png" alt="Dovizio Logo" class="studio-brand-logo">
+      <div class="studio-title">
+        <span>Dovizio Pharmaceutical Solutions</span>
+        <span class="studio-badge">Corporate Ver2 • 16:9 Showcase</span>
+      </div>
+    </div>
+
+    <!-- Mode Switcher & Controls -->
+    <div class="studio-controls">
+      <div class="mode-toggle">
+        <button id="canvasModeBtn" class="active" onclick="switchViewMode('canvas')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          4-Screen Figma Canvas
+        </button>
+        <button id="singleModeBtn" onclick="switchViewMode('single')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          Interactive Fullscreen
+        </button>
+      </div>
+
+      <!-- Canvas Zoom Selection -->
+      <select id="zoomSelect" class="control-btn" onchange="setZoom(this.value)">
+        <option value="fit">Zoom: Auto Fit</option>
+        <option value="0.55">55% Scale</option>
+        <option value="0.75">75% Scale</option>
+        <option value="1.0" selected>100% Scale</option>
+      </select>
+
+      <!-- Quick Navigation Dropdown -->
+      <button class="control-btn" onclick="toggleFullscreenShowcase()" title="Presentation 16:9 Fullscreen">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        16:9 Presentation
+      </button>
+
+      <button class="control-btn" onclick="toggleDesignSystem()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+        Design Tokens
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       VIEW MODE 1: 4-SCREEN FIGMA PRESENTATION CANVAS (SIDE-BY-SIDE)
+       ========================================================================== -->
+  <main id="showcaseViewport" class="showcase-viewport">
+    <div class="showcase-meta-bar">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="color:#ffffff; font-weight:700;">Dovizio Brand Ecosystem</span>
+        <span>•</span>
+        <span>Color Palette: Calming Teal (#009688) & Deep Navy (#0A192F)</span>
+        <span>•</span>
+        <span>Figma Frame Specs: 4 Screens Side-by-Side (1920x1080 Aspect Grid)</span>
+      </div>
+      <div>
+        <span style="color:#2dd4bf; background:rgba(20,184,166,0.15); padding:4px 10px; border-radius:4px; font-weight:600; font-size:12px;">
+          US FDA • EU-GMP • WHO-GMP Certified Quality
+        </span>
+      </div>
+    </div>
+
+    <!-- 4 Screen Grid Container -->
+    <div id="showcaseGrid" class="showcase-grid">
+
+      <!-- ================= FRAME 1: HOME PAGE ================= -->
+      <section class="figma-frame" id="frame-home">
+        <div class="frame-titlebar">
+          <div class="frame-dots">
+            <span class="frame-dot red"></span>
+            <span class="frame-dot yellow"></span>
+            <span class="frame-dot green"></span>
+          </div>
+          <div class="frame-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            01 / HOME — Strategic Enterprise Portal
+          </div>
+          <button class="frame-action-btn" onclick="loadSinglePage('home')">Expand Page ↗</button>
+        </div>
+
+        <div class="frame-scroll-content">
+          <!-- Navigation -->
+          <nav class="site-nav">
+            <div class="site-logo">
+              <img src="assets/logo.png" alt="Dovizio">
+              <div class="logo-text-wrap">
+                <span class="logo-brand-name">Dovizio</span>
+                <span class="logo-sub-name">Pharmaceutical Solutions</span>
+              </div>
+            </div>
+            <ul class="nav-links">
+              <li><a href="javascript:void(0)" class="active">Home</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('about')">About Us</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('global')">Global Presence</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('contact')">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0)" onclick="loadSinglePage('contact')" class="nav-cta">Partner With Us</a>
+          </nav>
+
+          <!-- Hero Section (Slide 1) -->
+          <section class="hero-section">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+            <div class="hero-tag">Global Pharmaceutical Capabilities</div>
+            <h1 class="hero-title">Bridging Global Markets with Precision, Quality & Scalability</h1>
+            <p class="hero-subtitle">
+              US-based pharmaceutical enterprise delivering end-to-end API sourcing, formulation development, CDMO execution, and regulatory excellence.
+            </p>
+            <div class="hero-pills">
+              <div class="hero-pill"><span class="dot"></span> USA & India Strategic Hubs</div>
+              <div class="hero-pill"><span class="dot"></span> US FDA • EU-GMP • WHO-GMP</div>
+              <div class="hero-pill"><span class="dot"></span> APIs, Finished Dosages & RLDs</div>
+            </div>
+            <div class="hero-buttons">
+              <a href="javascript:void(0)" onclick="loadSinglePage('contact')" class="btn-primary">Initiate Project ➔</a>
+              <a href="javascript:void(0)" onclick="loadSinglePage('about')" class="btn-outline-white">Explore Model</a>
+            </div>
+          </section>
+
+          <!-- Enterprise Pillars (Slide 2) -->
+          <section class="section-wrap">
+            <div class="section-header">
+              <div class="section-subtitle">A Connected Model</div>
+              <h2 class="section-title">Scientific Depth to Market Execution</h2>
+              <p class="section-desc">Integrating scientific, regulatory, and commercial capabilities to move products from opportunity to commercialization.</p>
+            </div>
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-icon-box">🔬</div>
+                <div class="pillar-title">Scientific Depth</div>
+                <p class="pillar-desc">Formulation development, API synthesis, process scale-up, and advanced technical problem-solving.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon-box">🌐</div>
+                <div class="pillar-title">Global Network</div>
+                <p class="pillar-desc">Audited CDMO network, strategic manufacturing access, and worldwide commercial distribution.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon-box">🛡️</div>
+                <div class="pillar-title">Quality Mindset</div>
+                <p class="pillar-desc">Rigorous regulatory-aware workflows adhering to US FDA, EU-GMP Annex 1, and compendial standards.</p>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon-box">⚡</div>
+                <div class="pillar-title">Execution Focus</div>
+                <p class="pillar-desc">Synchronized workstreams ensuring on-time tech transfer, dossier filing, and cold-chain delivery.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dosage Form Breadth (Slide 8) -->
+          <section class="section-wrap alt-bg">
+            <div class="section-header">
+              <div class="section-subtitle">Manufacturing Flexibility</div>
+              <h2 class="section-title">Dosage Form Breadth</h2>
+              <p class="section-desc">Designed around product characteristics, target markets, quality expectations, and scale.</p>
+            </div>
+            <div class="dosage-grid">
+              <div class="dosage-card" id="dosage-osd" onclick="selectDosageForm('osd')">
+                <div class="dosage-letter">T</div>
+                <div class="dosage-name">Oral Solids</div>
+                <div class="dosage-type">Tablets • Capsules</div>
+                <div class="dosage-sub">Established & niche formulations</div>
+              </div>
+              <div class="dosage-card" id="dosage-liq" onclick="selectDosageForm('liq')">
+                <div class="dosage-letter accent">L</div>
+                <div class="dosage-name">Oral Liquids</div>
+                <div class="dosage-type">Solutions • Suspensions</div>
+                <div class="dosage-sub">Patient-appropriate presentations</div>
+              </div>
+              <div class="dosage-card" id="dosage-par" onclick="selectDosageForm('par')">
+                <div class="dosage-letter">I</div>
+                <div class="dosage-name">Parenterals</div>
+                <div class="dosage-type">Sterile Injectables</div>
+                <div class="dosage-sub">Critical care & hospital specialty</div>
+              </div>
+              <div class="dosage-card" id="dosage-der" onclick="selectDosageForm('der')">
+                <div class="dosage-letter">D</div>
+                <div class="dosage-name">Dermaceuticals</div>
+                <div class="dosage-type">Topical Formulations</div>
+                <div class="dosage-sub">Skin health & dermatological lines</div>
+              </div>
+              <div class="dosage-card" id="dosage-api" onclick="selectDosageForm('api')">
+                <div class="dosage-letter accent">A</div>
+                <div class="dosage-name">APIs & Intermediates</div>
+                <div class="dosage-type">Niche / Tailored Synthesis</div>
+                <div class="dosage-sub">Supplier & technical coordination</div>
+              </div>
+              <div class="dosage-card" id="dosage-ref" onclick="selectDosageForm('ref')">
+                <div class="dosage-letter">R</div>
+                <div class="dosage-name">Reference Products</div>
+                <div class="dosage-type">RLDs • Comparators</div>
+                <div class="dosage-sub">Sourcing for BE studies & filings</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5-Step Value Proposition Delivery Workflow (Slide 14) -->
+          <section class="section-wrap">
+            <div class="section-header">
+              <div class="section-subtitle">Operating Architecture</div>
+              <h2 class="section-title">Value Proposition & Delivery Workflow</h2>
+              <p class="section-desc">A transparent, coordinated 5-stage pathway from requirement to delivery.</p>
+            </div>
+            <div class="workflow-row">
+              <div class="workflow-step">
+                <div class="workflow-num">01</div>
+                <div class="workflow-label">Requirement</div>
+                <p class="workflow-desc">Target molecule volume, spec definition & market fit.</p>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-num">02</div>
+                <div class="workflow-label">Selection</div>
+                <p class="workflow-desc">CDMO facility audit, tech capability & site matching.</p>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-num">03</div>
+                <div class="workflow-label">Compliance</div>
+                <p class="workflow-desc">Dossier filing, CMC review & regulatory clearance.</p>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-num">04</div>
+                <div class="workflow-label">Procurement</div>
+                <p class="workflow-desc">Cost-effective synthesis & scaled manufacturing.</p>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-num">05</div>
+                <div class="workflow-label">Delivery</div>
+                <p class="workflow-desc">On-time global cold-chain supply & pedigree tracking.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compliance Strip (Slide 12) -->
+          <div style="padding: 0 24px 38px;">
+            <div class="compliance-strip">
+              <div>
+                <div class="compliance-badge-name">FDA</div>
+                <div class="compliance-badge-title">U.S. FDA Compliant</div>
+                <div class="compliance-badge-desc">Audited & inspected partner sites</div>
+              </div>
+              <div>
+                <div class="compliance-badge-name">EU-GMP</div>
+                <div class="compliance-badge-title">European GMP Certified</div>
+                <div class="compliance-badge-desc">Full Annex 1 sterile compliance</div>
+              </div>
+              <div>
+                <div class="compliance-badge-name">WHO</div>
+                <div class="compliance-badge-title">WHO-GMP & ROW</div>
+                <div class="compliance-badge-desc">Extensive global market approvals</div>
+              </div>
+              <div>
+                <div class="compliance-badge-name">COMP</div>
+                <div class="compliance-badge-title">Compendial Standards</div>
+                <div class="compliance-badge-desc">USP, EP, IP & JP monographs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FRAME 2: ABOUT US PAGE ================= -->
+      <section class="figma-frame" id="frame-about">
+        <div class="frame-titlebar">
+          <div class="frame-dots">
+            <span class="frame-dot red"></span>
+            <span class="frame-dot yellow"></span>
+            <span class="frame-dot green"></span>
+          </div>
+          <div class="frame-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            02 / ABOUT US — Purpose, Values & Science
+          </div>
+          <button class="frame-action-btn" onclick="loadSinglePage('about')">Expand Page ↗</button>
+        </div>
+
+        <div class="frame-scroll-content">
+          <!-- Navigation -->
+          <nav class="site-nav">
+            <div class="site-logo">
+              <img src="assets/logo.png" alt="Dovizio">
+              <div class="logo-text-wrap">
+                <span class="logo-brand-name">Dovizio</span>
+                <span class="logo-sub-name">Pharmaceutical Solutions</span>
+              </div>
+            </div>
+            <ul class="nav-links">
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('home')">Home</a></li>
+              <li><a href="javascript:void(0)" class="active">About Us</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('global')">Global Presence</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('contact')">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0)" onclick="loadSinglePage('contact')" class="nav-cta">Reach Us</a>
+          </nav>
+
+          <!-- About Header Banner -->
+          <section class="hero-section" style="padding: 44px 24px 36px;">
+            <div class="hero-glow-1"></div>
+            <div class="hero-tag">Enterprise Profile</div>
+            <h1 class="hero-title" style="font-size:26px;">US-Based Leadership with Seamless Global Reach</h1>
+            <p class="hero-subtitle">
+              Deep expertise spanning early development to commercialization across diverse regulatory bodies for complex APIs and finished dosage forms.
+            </p>
+            <div style="background:rgba(255,255,255,0.08); border-radius:10px; padding:12px 18px; display:inline-flex; align-items:center; gap:12px; border:1px solid rgba(255,255,255,0.15);">
+              <span style="font-size:24px; font-weight:900; color:#2dd4bf;">100+</span>
+              <span style="font-size:12px; color:#e2e8f0; line-height:1.4;">Years of combined pharmaceutical industry executive experience</span>
+            </div>
+          </section>
+
+          <!-- Guiding Purpose: Mission & Vision (Slide 3) -->
+          <section class="section-wrap">
+            <div class="section-header">
+              <div class="section-subtitle">Guiding Purpose</div>
+              <h2 class="section-title">Mission & Vision</h2>
+            </div>
+            <div class="mv-grid">
+              <div class="mv-card mission">
+                <span class="mv-tag">Our Mission</span>
+                <div class="mv-headline">Affordable Access | Global Outreach | Quality Medicines</div>
+                <p class="mv-text">
+                  Leading provider of affordable high-quality medicine worldwide, removing healthcare barriers through scientific innovation and reliable supply chains.
+                </p>
+              </div>
+              <div class="mv-card vision">
+                <span class="mv-tag">Our Vision</span>
+                <div class="mv-headline">Trusted Global Pharmaceutical Partner</div>
+                <p class="mv-text">
+                  Expanding universal access via scientific excellence, innovation, and an uncompromised quality mindset across all regulated and emerging markets.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Core Values (Slide 4) -->
+          <section class="section-wrap alt-bg">
+            <div class="section-header">
+              <div class="section-subtitle">Foundational Principles</div>
+              <h2 class="section-title">Our Core Values</h2>
+              <p class="section-desc">The principles that govern our scientific inquiries, commercial partnerships, and quality standards.</p>
+            </div>
+            <div class="values-grid">
+              <div class="value-card">
+                <span class="value-icon">❤️</span>
+                <div class="value-name">Health Equity</div>
+                <p class="value-desc">Advance global access to high-quality, life-saving medicines without compromise.</p>
+              </div>
+              <div class="value-card">
+                <span class="value-icon">⚡</span>
+                <div class="value-name">Agile Action</div>
+                <p class="value-desc">Responsive cross-functional collaboration and swift adaptation to supply demands.</p>
+              </div>
+              <div class="value-card">
+                <span class="value-icon">🧠</span>
+                <div class="value-name">Rigorous Thinking</div>
+                <p class="value-desc">Practical, evidence-based scientific problem-solving methodology.</p>
+              </div>
+              <div class="value-card">
+                <span class="value-icon">🎯</span>
+                <div class="value-name">Clear Execution</div>
+                <p class="value-desc">Transparent plans, decisive ownership, and verified delivery pathways.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technical Capabilities & Analytical Services (Slide 13) -->
+          <section class="section-wrap">
+            <div class="section-header">
+              <div class="section-subtitle">Technical Capabilities</div>
+              <h2 class="section-title">Analytical Testing & Technical Services</h2>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid var(--teal-primary); border-radius:10px; padding:16px 20px;">
+                <h4 style="font-size:14px; color:var(--navy-dark); margin-bottom:4px;">Analytical Method Development & Validation</h4>
+                <p style="font-size:12.5px; color:var(--text-secondary);">Complete stability testing under ICH guidelines, impurity profiling, and genotoxic impurity screening.</p>
+              </div>
+              <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid var(--navy-dark); border-radius:10px; padding:16px 20px;">
+                <h4 style="font-size:14px; color:var(--navy-dark); margin-bottom:4px;">MOH Query Resolution</h4>
+                <p style="font-size:12.5px; color:var(--text-secondary);">Rapid, rigorous technical and regulatory responses to worldwide health authorities to accelerate approval timelines.</p>
+              </div>
+              <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid var(--teal-light); border-radius:10px; padding:16px 20px;">
+                <h4 style="font-size:14px; color:var(--navy-dark); margin-bottom:4px;">Bioequivalence (BE) Studies</h4>
+                <p style="font-size:12.5px; color:var(--text-secondary);">End-to-end clinical study design, protocol oversight, bioanalytical assay qualification, and comprehensive statistical clinical reporting.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ================= FRAME 3: GLOBAL PRESENCE PAGE ================= -->
+      <section class="figma-frame" id="frame-global">
+        <div class="frame-titlebar">
+          <div class="frame-dots">
+            <span class="frame-dot red"></span>
+            <span class="frame-dot yellow"></span>
+            <span class="frame-dot green"></span>
+          </div>
+          <div class="frame-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            03 / GLOBAL PRESENCE — Hubs & Distribution
+          </div>
+          <button class="frame-action-btn" onclick="loadSinglePage('global')">Expand Page ↗</button>
+        </div>
+
+        <div class="frame-scroll-content">
+          <!-- Navigation -->
+          <nav class="site-nav">
+            <div class="site-logo">
+              <img src="assets/logo.png" alt="Dovizio">
+              <div class="logo-text-wrap">
+                <span class="logo-brand-name">Dovizio</span>
+                <span class="logo-sub-name">Pharmaceutical Solutions</span>
+              </div>
+            </div>
+            <ul class="nav-links">
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('home')">Home</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('about')">About Us</a></li>
+              <li><a href="javascript:void(0)" class="active">Global Presence</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('contact')">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0)" onclick="loadSinglePage('contact')" class="nav-cta">Global Inquiries</a>
+          </nav>
+
+          <!-- Global Hero Banner -->
+          <section class="hero-section" style="padding: 44px 24px 36px;">
+            <div class="hero-glow-1"></div>
+            <div class="hero-tag">International Footprint</div>
+            <h1 class="hero-title" style="font-size:26px;">USA & India Strategic Hubs | Worldwide Reach</h1>
+            <p class="hero-subtitle">
+              Seamlessly linking North America, Europe, Latin America, the GCC/Middle East, and Africa with secure, compliant cold-chain supply networks.
+            </p>
+          </section>
+
+          <!-- Interactive World Map Section -->
+          <section class="section-wrap">
+            <div class="global-map-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <span style="font-size:14px; font-weight:700; color:#fff;">Interactive Operations Map</span>
+                <span style="font-size:11px; color:#2dd4bf;">● Click pins or hub cards below to inspect</span>
+              </div>
+              
+              <!-- SVG World Map Visualizer -->
+              <div class="map-svg-wrap">
+                <svg viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Simplified World Landmasses -->
+                  <path d="M150 120 Q 200 100, 280 110 T 320 180 T 260 220 T 170 200 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M220 250 Q 280 270, 270 360 T 220 420 T 190 320 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M460 100 Q 550 80, 580 150 T 480 200 T 440 140 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M480 210 Q 560 220, 550 340 T 490 390 T 450 280 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M600 110 Q 750 90, 840 150 T 780 260 T 640 220 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M650 230 Q 700 240, 710 320 T 660 330 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                  <path d="M780 320 Q 880 310, 870 410 T 780 390 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+                  <!-- Connecting Supply Lines -->
+                  <path d="M 230 160 Q 430 110, 680 270" stroke="#14b8a6" stroke-width="2" stroke-dasharray="4 4" opacity="0.65"/>
+                  <path d="M 230 160 Q 360 120, 500 140" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+                  <path d="M 680 270 Q 590 280, 510 310" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+                  <path d="M 230 160 Q 220 220, 230 310" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+
+                  <!-- Interactive Pins -->
+                  <!-- Raleigh, USA -->
+                  <g class="map-pin" onclick="highlightHub('usa')">
+                    <circle cx="230" cy="160" r="16" fill="rgba(20,184,166,0.3)"/>
+                    <circle id="pin-usa" cx="230" cy="160" r="8" fill="#38bdf8"/>
+                    <text x="230" y="140" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">USA HQ (Raleigh)</text>
+                  </g>
+
+                  <!-- India Strategic Hub -->
+                  <g class="map-pin" onclick="highlightHub('india')">
+                    <circle cx="680" cy="270" r="16" fill="rgba(20,184,166,0.3)"/>
+                    <circle id="pin-india" cx="680" cy="270" r="8" fill="#009688"/>
+                    <text x="680" y="250" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">India R&D Hub</text>
+                  </g>
+
+                  <!-- Europe -->
+                  <g class="map-pin" onclick="highlightHub('europe')">
+                    <circle id="pin-europe" cx="500" cy="140" r="6" fill="#009688"/>
+                    <text x="500" y="125" fill="#cbd5e1" font-size="10" text-anchor="middle">Europe (EU-GMP)</text>
+                  </g>
+
+                  <!-- LATAM -->
+                  <g class="map-pin" onclick="highlightHub('latam')">
+                    <circle id="pin-latam" cx="230" cy="310" r="6" fill="#009688"/>
+                    <text x="230" y="335" fill="#cbd5e1" font-size="10" text-anchor="middle">LATAM</text>
+                  </g>
+
+                  <!-- GCC / Middle East -->
+                  <g class="map-pin" onclick="highlightHub('gcc')">
+                    <circle id="pin-gcc" cx="590" cy="210" r="6" fill="#009688"/>
+                    <text x="590" y="195" fill="#cbd5e1" font-size="10" text-anchor="middle">GCC / MENA</text>
+                  </g>
+
+                  <!-- Africa -->
+                  <g class="map-pin" onclick="highlightHub('africa')">
+                    <circle id="pin-africa" cx="510" cy="310" r="6" fill="#009688"/>
+                    <text x="510" y="335" fill="#cbd5e1" font-size="10" text-anchor="middle">Africa</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Hub Details Grid -->
+            <div class="hubs-grid">
+              <div class="hub-card primary" id="card-usa" onclick="highlightHub('usa')">
+                <div class="hub-flag">🇺🇸</div>
+                <div class="hub-name">USA Strategic Hub</div>
+                <div class="hub-role">Corporate HQ & Commercial Governance</div>
+                <p class="hub-details">
+                  Located in Raleigh, North Carolina. Manages US FDA DMF filings, commercial distribution, licensing partnerships, and 503A/503B specialized compounding pharmacy supplies.
+                </p>
+              </div>
+
+              <div class="hub-card primary" id="card-india" onclick="highlightHub('india')">
+                <div class="hub-flag">🇮🇳</div>
+                <div class="hub-name">India Strategic Hub</div>
+                <div class="hub-role">R&D, Formulation & CDMO Network</div>
+                <p class="hub-details">
+                  Coordinates scientific synthesis, API manufacturing, technical scale-up, WHO-GMP compliant audits, and direct supplier management across vetted CDMO partners.
+                </p>
+              </div>
+
+              <div class="hub-card" id="card-europe" onclick="highlightHub('europe')">
+                <div class="hub-flag">🇪🇺</div>
+                <div class="hub-name">Europe</div>
+                <div class="hub-role">EU-GMP & Annex 1 Compliance</div>
+                <p class="hub-details">
+                  Vetted sterile manufacturing sites adhering to strict Annex 1 requirements, CEP filings, and multi-country marketing authorization support.
+                </p>
+              </div>
+
+              <div class="hub-card" id="card-latam" onclick="highlightHub('latam')">
+                <div class="hub-flag">🌎</div>
+                <div class="hub-name">LATAM Markets</div>
+                <div class="hub-role">Regional Expansion & Dossiers</div>
+                <p class="hub-details">
+                  Registration dossier support, private-label commercialization, and fast-track market entry across Brazil, Mexico, Colombia, and Central America.
+                </p>
+              </div>
+
+              <div class="hub-card" id="card-gcc" onclick="highlightHub('gcc')">
+                <div class="hub-flag">🌍</div>
+                <div class="hub-name">GCC & Middle East</div>
+                <div class="hub-role">Hospital Tenders & In-Licensing</div>
+                <p class="hub-details">
+                  Specialty parenteral supply, institutional tenders, and commercial partner networks across Saudi Arabia, UAE, and GCC health ministries.
+                </p>
+              </div>
+
+              <div class="hub-card" id="card-africa" onclick="highlightHub('africa')">
+                <div class="hub-flag">🌍</div>
+                <div class="hub-name">Africa</div>
+                <div class="hub-role">Affordable Essential Medicines</div>
+                <p class="hub-details">
+                  Driving health equity by delivering affordable, high-demand oral solids and critical care therapeutics in collaboration with global health organizations.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ================= FRAME 4: CONTACT US PAGE ================= -->
+      <section class="figma-frame" id="frame-contact">
+        <div class="frame-titlebar">
+          <div class="frame-dots">
+            <span class="frame-dot red"></span>
+            <span class="frame-dot yellow"></span>
+            <span class="frame-dot green"></span>
+          </div>
+          <div class="frame-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            04 / CONTACT US — Inquiries & RFP Dispatch
+          </div>
+          <button class="frame-action-btn" onclick="loadSinglePage('contact')">Expand Page ↗</button>
+        </div>
+
+        <div class="frame-scroll-content">
+          <!-- Navigation -->
+          <nav class="site-nav">
+            <div class="site-logo">
+              <img src="assets/logo.png" alt="Dovizio">
+              <div class="logo-text-wrap">
+                <span class="logo-brand-name">Dovizio</span>
+                <span class="logo-sub-name">Pharmaceutical Solutions</span>
+              </div>
+            </div>
+            <ul class="nav-links">
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('home')">Home</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('about')">About Us</a></li>
+              <li><a href="javascript:void(0)" onclick="loadSinglePage('global')">Global Presence</a></li>
+              <li><a href="javascript:void(0)" class="active">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0)" class="nav-cta">Reach Us</a>
+          </nav>
+
+          <!-- Contact Header -->
+          <section class="hero-section" style="padding: 44px 24px 36px;">
+            <div class="hero-glow-1"></div>
+            <div class="hero-tag">Strategic Partnership</div>
+            <h1 class="hero-title" style="font-size:26px;">Let’s Build the Right Pharma Path</h1>
+            <p class="hero-subtitle">
+              Start with a product, a market, or a supply challenge — we coordinate the ecosystem toward a compliant commercial solution.
+            </p>
+          </section>
+
+          <!-- Contact Details & Form Layout -->
+          <section class="section-wrap">
+            <div class="contact-layout">
+
+              <!-- Contact Info Sidebar -->
+              <div class="contact-info-panel">
+                <div>
+                  <h3 style="color:#ffffff; font-size:18px; margin-bottom:16px;">Corporate Inquiries</h3>
+                  
+                  <div class="contact-item">
+                    <div class="contact-icon-box">📍</div>
+                    <div>
+                      <div class="contact-item-title">Global Headquarters</div>
+                      <div class="contact-item-value">9121 Anson Way, Suite 200<br>Raleigh, NC 27615, USA</div>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon-box">✉️</div>
+                    <div>
+                      <div class="contact-item-title">Business Development</div>
+                      <div class="contact-item-value">
+                        <a href="mailto:bd@doviziollc.com" class="contact-email-link">bd@doviziollc.com</a>
+                      </div>
+                      <div class="contact-emails-list">
+                        <a href="mailto:ninad@doviziollc.com" class="contact-email-link">ninad@doviziollc.com</a>
+                        <a href="mailto:chirag@doviziollc.com" class="contact-email-link">chirag@doviziollc.com</a>
+                        <a href="mailto:mshah@doviziollc.com" class="contact-email-link">mshah@doviziollc.com</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon-box">📞</div>
+                    <div>
+                      <div class="contact-item-title">Telephone & WhatsApp</div>
+                      <div class="contact-item-value">
+                        <a href="tel:+919979895682" style="color:#fff;">+91-9979895682</a><br>
+                        <a href="tel:+1123456789" style="color:#cbd5e1; font-size:12px;">+1 (123) 456-7890</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="contact-item">
+                    <div class="contact-icon-box">🌐</div>
+                    <div>
+                      <div class="contact-item-title">Official Domain</div>
+                      <div class="contact-item-value">
+                        <a href="https://www.doviziollc.com" target="_blank" class="contact-email-link">www.doviziollc.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:14px; margin-top:20px; font-size:11.5px; color:#cbd5e1;">
+                  <strong style="color:#2dd4bf;">24-Hour Executive SLA:</strong> All enterprise inquiries are evaluated by our scientific & regulatory review board within 24 hours.
+                </div>
+              </div>
+
+              <!-- Interactive RFP / Contact Form -->
+              <div class="contact-form-panel">
+                <h3 style="color:var(--navy-dark); font-size:18px; margin-bottom:6px;">Initiate a Consultation / RFP</h3>
+                <p style="font-size:12.5px; color:var(--text-secondary); margin-bottom:20px;">
+                  Tell us about your target molecule, dosage format, or target regulatory geography.
+                </p>
+
+                <form onsubmit="handleInquirySubmit(event)">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Full Name *</label>
+                      <input type="text" name="fullName" class="form-input" placeholder="e.g. Dr. Alex Mercer" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Company / Enterprise *</label>
+                      <input type="text" name="company" class="form-input" placeholder="e.g. Biopharma Labs" required>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Work Email *</label>
+                      <input type="email" name="email" class="form-input" placeholder="alex@company.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Target Region *</label>
+                      <select name="region" class="form-select" required>
+                        <option value="USA">United States (FDA / 503A / 503B)</option>
+                        <option value="Europe">Europe (EU-GMP)</option>
+                        <option value="India">India (R&D / Synthesis)</option>
+                        <option value="LATAM">Latin America</option>
+                        <option value="GCC">GCC / Middle East</option>
+                        <option value="Africa">Africa</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Inquiry Track *</label>
+                    <select name="inquiryType" class="form-select" required>
+                      <option value="API Sourcing & DMF Support">API Sourcing & DMF Filing Support</option>
+                      <option value="Formulation & Tech Transfer">Formulation R&D & Technology Transfer</option>
+                      <option value="CDMO / CMO Manufacturing">CDMO / CMO Manufacturing Network</option>
+                      <option value="RLD & Comparator Sourcing">RLD & Reference Comparator Sourcing</option>
+                      <option value="White-Label & Dossier Licensing">White-Label & Dossier Licensing</option>
+                      <option value="Analytical & BE Studies">Analytical Method Validation & BE Studies</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Project Scope & Requirements</label>
+                    <textarea name="notes" class="form-textarea" rows="3" placeholder="Provide molecule details, target volume, batch size, or regulatory timelines..."></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px;">
+                    Submit Enterprise Inquiry ➔
+                  </button>
+                </form>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Footer Component -->
+          <footer class="site-footer">
+            <div class="footer-top">
+              <div class="footer-brand">
+                <img src="assets/logo.png" alt="Dovizio">
+                <span style="font-weight:700; color:#fff; font-size:13px;">Dovizio Pharmaceutical Solutions</span>
+              </div>
+              <ul class="footer-links">
+                <li><a href="javascript:void(0)" onclick="loadSinglePage('home')">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="loadSinglePage('about')">About Us</a></li>
+                <li><a href="javascript:void(0)" onclick="loadSinglePage('global')">Global Presence</a></li>
+                <li><a href="javascript:void(0)" onclick="loadSinglePage('contact')">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-bottom">
+              <span>© 2026 Dovizio Pharmaceutical Solutions LLC. All rights reserved.</span>
+              <span>Raleigh, NC, USA • Strategic Global Hubs</span>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       VIEW MODE 2: INTERACTIVE SINGLE PAGE EXPERIENCE
+       ========================================================================== -->
+  <div id="singlePageContainer" style="display:none; min-height:100vh;">
+    <!-- Single Mode Persistent Header -->
+    <header class="site-nav" style="border-bottom: 1px solid #e2e8f0;">
+      <div class="site-logo">
+        <img src="assets/logo.png" alt="Dovizio">
+        <div class="logo-text-wrap">
+          <span class="logo-brand-name">Dovizio</span>
+          <span class="logo-sub-name">Pharmaceutical Solutions</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="javascript:void(0)" class="single-nav-link active" data-target="home" onclick="loadSinglePage('home')">Home</a></li>
+        <li><a href="javascript:void(0)" class="single-nav-link" data-target="about" onclick="loadSinglePage('about')">About Us</a></li>
+        <li><a href="javascript:void(0)" class="single-nav-link" data-target="global" onclick="loadSinglePage('global')">Global Presence</a></li>
+        <li><a href="javascript:void(0)" class="single-nav-link" data-target="contact" onclick="loadSinglePage('contact')">Contact Us</a></li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button onclick="switchViewMode('canvas')" class="control-btn" style="background:#0a192f; color:#fff; border:none;">
+          ⬅ Back to 4-Page Canvas
+        </button>
+        <a href="javascript:void(0)" onclick="loadSinglePage('contact')" class="nav-cta">Get In Touch</a>
+      </div>
+    </header>
+
+    <!-- Individual Page Containers -->
+    <div id="single-home" class="single-page-view" style="display:block;">
+      <!-- Content cloned or dynamically referenced from Frame 1 -->
+      <div id="homePageFullContent"></div>
+    </div>
+
+    <div id="single-about" class="single-page-view" style="display:none;">
+      <div id="aboutPageFullContent"></div>
+    </div>
+
+    <div id="single-global" class="single-page-view" style="display:none;">
+      <div id="globalPageFullContent"></div>
+    </div>
+
+    <div id="single-contact" class="single-page-view" style="display:none;">
+      <div id="contactPageFullContent"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DESIGN SYSTEM TOKENS DRAWER
+       ========================================================================== -->
+  <aside id="dsDrawer" class="ds-drawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+      <h3 style="color:#ffffff; font-size:16px;">Design System Tokens</h3>
+      <button onclick="toggleDesignSystem()" style="color:#94a3b8; font-size:18px;">✕</button>
+    </div>
+
+    <h4 style="font-size:12px; color:#2dd4bf; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">Primary Palette</h4>
+    <div class="ds-swatch" style="background:#009688; color:#fff;" onclick="copyColor('#009688', this)">
+      <span>Calming Teal</span>
+      <code>#009688</code>
+    </div>
+    <div class="ds-swatch" style="background:#0d9488; color:#fff;" onclick="copyColor('#0d9488', this)">
+      <span>Deep Teal</span>
+      <code>#0D9488</code>
+    </div>
+    <div class="ds-swatch" style="background:#14b8a6; color:#0a192f;" onclick="copyColor('#14b8a6', this)">
+      <span>Vibrant Teal</span>
+      <code>#14B8A6</code>
+    </div>
+    <div class="ds-swatch" style="background:#0a192f; color:#fff; border:1px solid #1e293b;" onclick="copyColor('#0a192f', this)">
+      <span>Authoritative Navy</span>
+      <code>#0A192F</code>
+    </div>
+    <div class="ds-swatch" style="background:#e6f4f1; color:#0a192f;" onclick="copyColor('#e6f4f1', this)">
+      <span>Soft Mint Surface</span>
+      <code>#E6F4F1</code>
+    </div>
+    <div class="ds-swatch" style="background:#ffffff; color:#0f172a; border:1px solid #cbd5e1;" onclick="copyColor('#ffffff', this)">
+      <span>Warm Whitespace</span>
+      <code>#FFFFFF</code>
+    </div>
+
+    <h4 style="font-size:12px; color:#2dd4bf; text-transform:uppercase; letter-spacing:0.08em; margin:20px 0 10px;">Typography & Weights</h4>
+    <div style="font-size:12px; color:#cbd5e1; line-height:1.7;">
+      <strong>Display:</strong> Plus Jakarta Sans Bold / 800<br>
+      <strong>Body:</strong> Plus Jakarta Sans Regular / 400<br>
+      <strong>Accents:</strong> Letter-spacing +0.06em, Upper-case<br>
+      <strong>Contrast:</strong> WCAG AAA Accessible on Navy & Teal
+    </div>
+
+    <h4 style="font-size:12px; color:#2dd4bf; text-transform:uppercase; letter-spacing:0.08em; margin:20px 0 10px;">Regulatory Certifications</h4>
+    <div style="font-size:12px; color:#cbd5e1; line-height:1.7;">
+      ✓ US FDA audited partner sites<br>
+      ✓ EU-GMP certified Annex 1 sterile lines<br>
+      ✓ WHO-GMP global registrations<br>
+      ✓ USP, EP, IP & JP compendial monographs
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SUBMISSION CONFIRMATION MODAL
+       ========================================================================== -->
+  <div id="confirmModal" class="modal-overlay">
+    <div class="modal-box">
+      <div style="width:54px; height:54px; background:#e6f4f1; color:#009688; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 16px;">
+        ✓
+      </div>
+      <h3 style="color:var(--navy-dark); font-size:20px; margin-bottom:8px;">Inquiry Successfully Dispatched</h3>
+      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">
+        Thank you, <span id="modalLeadName" style="font-weight:700; color:var(--navy-dark);">Partner</span>. Your inquiry reference is:
+      </p>
+      <div style="background:#f1f5f9; padding:8px 14px; border-radius:6px; font-weight:800; font-size:16px; color:var(--teal-primary); letter-spacing:0.05em; margin-bottom:16px; display:inline-block;" id="modalRefNum">
+        DVZ-100293
+      </div>
+      <div id="modalSummary" style="font-size:12px; color:var(--text-secondary); line-height:1.6; text-align:left; background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-bottom:20px;">
+      </div>
+      <button onclick="closeModal()" class="btn-primary" style="width:100%; justify-content:center;">
+        Return to Presentation
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Copy content to single page containers on initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      const homeContent = document.querySelector('#frame-home .frame-scroll-content')?.innerHTML;
+      const aboutContent = document.querySelector('#frame-about .frame-scroll-content')?.innerHTML;
+      const globalContent = document.querySelector('#frame-global .frame-scroll-content')?.innerHTML;
+      const contactContent = document.querySelector('#frame-contact .frame-scroll-content')?.innerHTML;
+
+      if (homeContent) document.getElementById('homePageFullContent').innerHTML = homeContent;
+      if (aboutContent) document.getElementById('aboutPageFullContent').innerHTML = aboutContent;
+      if (globalContent) document.getElementById('globalPageFullContent').innerHTML = globalContent;
+      if (contactContent) document.getElementById('contactPageFullContent').innerHTML = contactContent;
+    });
+  </script>
+</body>
+</html>
