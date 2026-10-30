@@ -72,14 +72,10 @@ Dovizio/
 - **Global Corporate Headquarters**:
   `9121 Anson Way, Suite 200, Raleigh, NC 27615, USA`
 - **Business Development**: `bd@doviziollc.com`
-- **Executive Leadership**:
-  - Ninad Shah: `ninad@doviziollc.com`
-  - Chirag Shah: `chirag@doviziollc.com`
-  - M. Shah: `mshah@doviziollc.com`
 - **Telephone / WhatsApp**:
   - International: `+91-9979895682`
   - US Line: `+1 (123) 456-7890`
-- **Official Portal**: `www.doviziollc.com`
+- **Official Portal**: `www.doviziophrama.com`
 
 ---
 
