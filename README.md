@@ -34,10 +34,11 @@ Dovizio/
 │   └── styles.css              # Design system, glassmorphic styling, components
 ├── js/
 │   └── main.js                 # Hub map pins, dosage form tabs, RFP dispatch
-├── home.html                   # Standalone Home page
-├── about.html                  # Standalone About Us page
-├── global-presence.html        # Standalone Global Presence page
-├── contact.html                # Standalone Contact Us page
+├── index.html                  # Default landing page for GitHub Pages (Home)
+├── home.html                   # Home page
+├── about.html                  # About Us page
+├── global-presence.html        # Global Presence page
+├── contact.html                # Contact Us page
 └── README.md                   # Platform documentation & deployment instructions
 ```
 
