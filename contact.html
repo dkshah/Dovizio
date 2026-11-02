@@ -172,11 +172,11 @@
           Submit your product specifications, target manufacturing volumes, or regulatory requirements.
         </p>
 
-        <form id="rfpInquiryForm" action="https://formsubmit.co/erdipenshah23@gmail.com" method="POST" onsubmit="handleInquirySubmit(event)">
+        <form id="rfpInquiryForm" action="https://formsubmit.co/bd@doviziopharma.com" method="POST" onsubmit="handleInquirySubmit(event)">
           <input type="hidden" name="_subject" id="formSubject" value="New Dovizio Technical Proposal Inquiry">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_replyto" id="formReplyTo" value="erdipenshah23@gmail.com">
+          <input type="hidden" name="_replyto" id="formReplyTo" value="bd@doviziopharma.com">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Full Name *</label>
@@ -250,60 +250,24 @@
     </div>
   </section>
 
-  <!-- Submission Confirmation Modal with Email Template Preview -->
+  <!-- Submission Confirmation Modal -->
   <div id="confirmModal" class="modal-overlay">
-    <div class="modal-box" id="modalBox">
-      <div style="width:54px; height:54px; background:#e6f4f1; color:#009688; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 14px;">
+    <div class="modal-box">
+      <div style="width:54px; height:54px; background:#e6f4f1; color:#009688; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 16px;">
         ✓
       </div>
-      <h3 style="color:var(--navy-dark); font-size:20px; font-weight:800; margin-bottom:6px;">Inquiry Dispatched to Business Development</h3>
-      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:12px;">
-        Thank you, <span id="modalLeadName" style="font-weight:700; color:var(--navy-dark);">Partner</span>. An automated website-branded notification has been generated for <strong>erdipenshah23@gmail.com</strong>.
+      <h3 style="color:var(--navy-dark); font-size:20px; font-weight:800; margin-bottom:8px;">Inquiry Successfully Dispatched</h3>
+      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:14px;">
+        Thank you, <span id="modalLeadName" style="font-weight:700; color:var(--navy-dark);">Partner</span>. Your inquiry reference is:
       </p>
-
-      <div style="display:flex; justify-content:center; gap:8px; align-items:center; margin-bottom:14px; flex-wrap:wrap;">
-        <div style="background:#f1f5f9; padding:6px 14px; border-radius:6px; font-weight:800; font-size:15px; color:var(--teal-primary); letter-spacing:0.05em; border:1px solid #cbd5e1;" id="modalRefNum">
-          DVZ-100293
-        </div>
-        <div id="modalStatusBadge" style="display:inline-flex; align-items:center; gap:5px; background:#f0fdfa; border:1px solid #99f6e4; color:#0f766e; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:700;">
-          ✉️ Sent to erdipenshah23@gmail.com
-        </div>
+      <div style="background:#f1f5f9; padding:8px 16px; border-radius:6px; font-weight:800; font-size:16px; color:var(--teal-primary); letter-spacing:0.05em; margin-bottom:16px; display:inline-block; border:1px solid #cbd5e1;" id="modalRefNum">
+        DVZ-100293
       </div>
-
-      <div id="modalSummary" style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; text-align:left; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin-bottom:16px;">
+      <div id="modalSummary" style="font-size:12.5px; color:var(--text-secondary); line-height:1.6; text-align:left; background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin-bottom:20px;">
       </div>
-
-      <!-- Toggle to View Website Email Template -->
-      <div style="margin-bottom: 16px;">
-        <button type="button" onclick="toggleEmailPreview()" id="togglePreviewBtn" class="btn-outline" style="font-size:12.5px; padding:8px 16px; width:100%; justify-content:center; gap:6px; border-color:#009688; color:#009688;">
-          📧 View Website-Based Email Template ▾
-        </button>
-      </div>
-
-      <!-- Live Email Template Container -->
-      <div id="emailPreviewWrapper" class="email-preview-wrapper">
-        <div style="background:#0a192f; color:#ffffff; padding:10px 14px; font-size:11.5px; font-weight:700; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #009688;">
-          <span>📨 Inbound Email Dispatched to: erdipenshah23@gmail.com</span>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <button type="button" onclick="copyEmailHtml()" id="copyHtmlBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:3px 8px; border-radius:4px; font-size:10.5px; cursor:pointer;">📋 Copy HTML</button>
-            <span style="color:#2dd4bf; font-size:10.5px; text-transform:uppercase;">Custom HTML</span>
-          </div>
-        </div>
-        <div id="emailPreviewContainer" style="max-height:360px; overflow-y:auto; background:#ffffff; padding:10px;">
-        </div>
-        <div style="font-size:11px; color:#64748b; background:#f8fafc; border-top:1px solid #e2e8f0; padding:8px 12px; line-height:1.4;">
-          💡 <strong>Want this exact HTML email delivered to your inbox?</strong> Connect the free Google Apps Script in <code style="color:#009688;">google-apps-script.js</code> in 60 seconds.
-        </div>
-      </div>
-
-      <div style="display:flex; gap:10px; margin-top:8px;">
-        <a id="modalMailtoBtn" href="#" class="btn-outline" style="flex:1; justify-content:center; font-size:13px; padding:11px 14px; text-decoration:none; text-align:center;">
-          ✉️ Open in Mail Client
-        </a>
-        <button onclick="closeModal()" class="btn-primary" style="flex:1; justify-content:center; font-size:13px; padding:11px 16px;">
-          Close Window
-        </button>
-      </div>
+      <button onclick="closeModal()" class="btn-primary" style="width:100%; justify-content:center; padding:12px; font-size:14px;">
+        Close Window
+      </button>
     </div>
   </div>
 
