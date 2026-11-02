@@ -48,6 +48,7 @@ Dovizio/
 ├── global-presence.html        # Global Presence page
 ├── contact.html                # Contact Us page
 ├── email-template.html         # Responsive website-based email template (bd@doviziopharma.com)
+├── google-apps-script.js       # 60-second Google Apps Script to deliver exact custom HTML emails via Gmail
 └── README.md                   # Platform documentation & deployment instructions
 ```
 

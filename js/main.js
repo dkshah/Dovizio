@@ -239,6 +239,24 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
+  // --- Copy Generated Email HTML to Clipboard ---
+  window.copyEmailHtml = function() {
+    const container = document.getElementById('emailPreviewContainer');
+    const btn = document.getElementById('copyHtmlBtn');
+    if (!container) return;
+
+    const htmlToCopy = container.innerHTML;
+    navigator.clipboard.writeText(htmlToCopy).then(() => {
+      if (btn) {
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '✓ Copied!';
+        setTimeout(() => { btn.innerHTML = oldText; }, 2000);
+      }
+    }).catch(() => {
+      alert('Unable to copy HTML automatically. Please select and copy manually.');
+    });
+  };
+
   // --- Toggle Email Preview Inside Modal ---
   window.toggleEmailPreview = function() {
     const modalBox = document.getElementById('modalBox');
@@ -291,7 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
       notes
     };
 
-    // Inbound Inquiry Target Recipient (configured for testing)
+    // =========================================================================
+    // INBOUND INQUIRY DISPATCH CONFIGURATION
+    // -------------------------------------------------------------------------
+    // To receive the EXACT custom website-based HTML email in your inbox,
+    // paste your deployed Google Apps Script Web App URL below (see google-apps-script.js).
+    // =========================================================================
+    const GOOGLE_SCRIPT_WEBAPP_URL = ''; // e.g. 'https://script.google.com/macros/s/AKfycb.../exec'
     const RECIPIENT_EMAIL = 'erdipenshah23@gmail.com';
 
     // Update UI Loading State
@@ -361,7 +385,7 @@ Direct BD Desk:  bd@doviziopharma.com
       previewContainer.innerHTML = htmlEmail;
     }
 
-    // FormSubmit payload
+    // FormSubmit payload (standard fallback)
     const payload = {
       _subject: emailSubject,
       _template: 'table',
@@ -380,45 +404,61 @@ Direct BD Desk:  bd@doviziopharma.com
       'Notification': `Transmitted from doviziopharma.com Contact Form to ${RECIPIENT_EMAIL}`
     };
 
-    // Dispatch via FormSubmit AJAX to RECIPIENT_EMAIL
-    fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (statusBadge) {
-        statusBadge.innerHTML = `✉️ Transmitted to ${RECIPIENT_EMAIL}`;
-        statusBadge.style.background = '#f0fdfa';
-        statusBadge.style.color = '#0f766e';
-        statusBadge.style.borderColor = '#99f6e4';
-      }
-    })
-    .catch(err => {
-      // In case of ad-blocker or offline mode, inform user that mail client backup is ready
-      if (statusBadge) {
-        statusBadge.innerHTML = `⚡ Ready for Direct Dispatch (${RECIPIENT_EMAIL})`;
-        statusBadge.style.background = '#fefce8';
-        statusBadge.style.color = '#854d0e';
-        statusBadge.style.borderColor = '#fef08a';
-      }
-    })
-    .finally(() => {
-      // Display Confirmation Modal
-      const modal = document.getElementById('confirmModal');
-      if (modal) modal.classList.add('active');
+    // Choose Dispatch Mechanism:
+    // 1) If Google Apps Script Web App URL is present, send the custom HTML email directly!
+    // 2) Otherwise, fallback to FormSubmit AJAX endpoint.
+    const sendPromise = GOOGLE_SCRIPT_WEBAPP_URL
+      ? fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            to: RECIPIENT_EMAIL,
+            subject: emailSubject,
+            htmlBody: htmlEmail,
+            replyTo: email,
+            leadData: leadData
+          })
+        })
+      : fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
 
-      // Reset Button & Form
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Submit Confidential Enterprise Inquiry ➔';
-      }
-      form.reset();
-    });
+    sendPromise
+      .then(res => {
+        if (statusBadge) {
+          statusBadge.innerHTML = `✉️ Transmitted to ${RECIPIENT_EMAIL}`;
+          statusBadge.style.background = '#f0fdfa';
+          statusBadge.style.color = '#0f766e';
+          statusBadge.style.borderColor = '#99f6e4';
+        }
+      })
+      .catch(err => {
+        // In case of ad-blocker or offline mode, inform user that mail client backup is ready
+        if (statusBadge) {
+          statusBadge.innerHTML = `⚡ Ready for Direct Dispatch (${RECIPIENT_EMAIL})`;
+          statusBadge.style.background = '#fefce8';
+          statusBadge.style.color = '#854d0e';
+          statusBadge.style.borderColor = '#fef08a';
+        }
+      })
+      .finally(() => {
+        // Display Confirmation Modal
+        const modal = document.getElementById('confirmModal');
+        if (modal) modal.classList.add('active');
+
+        // Reset Button & Form
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit Confidential Enterprise Inquiry ➔';
+        }
+        form.reset();
+      });
   };
 
   window.closeModal = function() {

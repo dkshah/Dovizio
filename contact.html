@@ -284,9 +284,15 @@
       <div id="emailPreviewWrapper" class="email-preview-wrapper">
         <div style="background:#0a192f; color:#ffffff; padding:10px 14px; font-size:11.5px; font-weight:700; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #009688;">
           <span>📨 Inbound Email Dispatched to: erdipenshah23@gmail.com</span>
-          <span style="color:#2dd4bf; font-size:10.5px; text-transform:uppercase;">HTML Template</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <button type="button" onclick="copyEmailHtml()" id="copyHtmlBtn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:3px 8px; border-radius:4px; font-size:10.5px; cursor:pointer;">📋 Copy HTML</button>
+            <span style="color:#2dd4bf; font-size:10.5px; text-transform:uppercase;">Custom HTML</span>
+          </div>
         </div>
         <div id="emailPreviewContainer" style="max-height:360px; overflow-y:auto; background:#ffffff; padding:10px;">
+        </div>
+        <div style="font-size:11px; color:#64748b; background:#f8fafc; border-top:1px solid #e2e8f0; padding:8px 12px; line-height:1.4;">
+          💡 <strong>Want this exact HTML email delivered to your inbox?</strong> Connect the free Google Apps Script in <code style="color:#009688;">google-apps-script.js</code> in 60 seconds.
         </div>
       </div>
 
