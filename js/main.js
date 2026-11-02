@@ -291,10 +291,13 @@ document.addEventListener('DOMContentLoaded', () => {
       notes
     };
 
+    // Inbound Inquiry Target Recipient (configured for testing)
+    const RECIPIENT_EMAIL = 'erdipenshah23@gmail.com';
+
     // Update UI Loading State
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Transmitting to bd@doviziopharma.com... ⏳';
+      submitBtn.innerHTML = `Transmitting to ${RECIPIENT_EMAIL}... ⏳`;
     }
 
     // Populate modal summary elements
@@ -349,7 +352,7 @@ Official Portal: https://doviziopharma.com
 Direct BD Desk:  bd@doviziopharma.com
 `;
 
-    const mailtoUrl = `mailto:bd@doviziopharma.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailPlainBody)}`;
+    const mailtoUrl = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailPlainBody)}`;
     if (mailtoBtn) mailtoBtn.href = mailtoUrl;
 
     // Render Website Email Template in Modal Preview Container
@@ -374,11 +377,11 @@ Direct BD Desk:  bd@doviziopharma.com
       'Dosage Format': dosageFormat,
       'Project Scope & Specifications': notes,
       'Submission Timestamp': timestamp,
-      'Notification': 'Transmitted from doviziopharma.com Contact Form'
+      'Notification': `Transmitted from doviziopharma.com Contact Form to ${RECIPIENT_EMAIL}`
     };
 
-    // Dispatch via FormSubmit AJAX to bd@doviziopharma.com
-    fetch('https://formsubmit.co/ajax/bd@doviziopharma.com', {
+    // Dispatch via FormSubmit AJAX to RECIPIENT_EMAIL
+    fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -389,7 +392,7 @@ Direct BD Desk:  bd@doviziopharma.com
     .then(res => res.json())
     .then(data => {
       if (statusBadge) {
-        statusBadge.innerHTML = '✉️ Transmitted to bd@doviziopharma.com';
+        statusBadge.innerHTML = `✉️ Transmitted to ${RECIPIENT_EMAIL}`;
         statusBadge.style.background = '#f0fdfa';
         statusBadge.style.color = '#0f766e';
         statusBadge.style.borderColor = '#99f6e4';
@@ -398,7 +401,7 @@ Direct BD Desk:  bd@doviziopharma.com
     .catch(err => {
       // In case of ad-blocker or offline mode, inform user that mail client backup is ready
       if (statusBadge) {
-        statusBadge.innerHTML = '⚡ Ready for Direct Dispatch (bd@doviziopharma.com)';
+        statusBadge.innerHTML = `⚡ Ready for Direct Dispatch (${RECIPIENT_EMAIL})`;
         statusBadge.style.background = '#fefce8';
         statusBadge.style.color = '#854d0e';
         statusBadge.style.borderColor = '#fef08a';
