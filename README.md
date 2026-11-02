@@ -75,11 +75,11 @@ Dovizio/
 
 - **Global Corporate Headquarters**:
   `9121 Anson Way, Suite 200, Raleigh, NC 27615, USA`
-- **Business Development**: `bd@doviziollc.com`
+- **Business Development**: `bd@doviziopharma.com`
 - **Telephone / WhatsApp**:
   - International: `+91-9979895682`
   - US Line: `+1 (123) 456-7890`
-- **Official Portal**: `www.doviziophrama.com`
+- **Official Portal**: `doviziopharma.com`
 
 ---
 
