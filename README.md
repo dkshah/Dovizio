@@ -25,6 +25,10 @@ A cohesive, modern, and empathetic 4-page corporate website and Figma-style pres
    - Animated 3-bar hamburger drawer navigation below 992px (`iPad` and `Mobile`).
    - Touch hit targets (≥ 44px) and iOS Safari auto-zoom prevention (`font-size: 16px` on inputs).
    - Fluid `clamp(...)` typography and multi-column grid collapses tailored for iPhone, Android, iPad Mini, iPad Air, and iPad Pro.
+4. **Automated Inbound Inquiry Dispatch & Email Template**:
+   - Technical RFP proposals submitted via the contact form automatically transmit structured lead parameters to `bd@doviziopharma.com`.
+   - Includes a responsive, website-branded HTML email template (`email-template.html`) formatted with brand colors, lotus logo, solution track, scope notes, and reference tracking (`DVZ-XXXXXX`).
+   - Integrated live template preview in the confirmation modal and 1-click desktop mailto client backup.
 
 ---
 
@@ -43,6 +47,7 @@ Dovizio/
 ├── about.html                  # About Us page
 ├── global-presence.html        # Global Presence page
 ├── contact.html                # Contact Us page
+├── email-template.html         # Responsive website-based email template (bd@doviziopharma.com)
 └── README.md                   # Platform documentation & deployment instructions
 ```
 
